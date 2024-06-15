@@ -1090,6 +1090,7 @@
     <None Include="trains\br-312.dat" />
     <None Include="trains\br-314.dat" />
     <None Include="trains\br-318.dat" />
+    <None Include="trains\br-320.dat" />
     <None Include="trains\br-321.dat" />
     <None Include="trains\br-323.dat" />
     <None Include="trains\br-325.dat" />
