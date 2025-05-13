@@ -71,8 +71,8 @@ class_proportion_jobs[3]=3
 class_proportion_jobs[4]=2
 Location=City
 distributionweight=15
-Productivity=1
-Range=2
+Productivity=3
+Range=3
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -129,8 +129,8 @@ class_proportion_jobs[4]=5
 level=1
 Location=City
 distributionweight=6
-Productivity=4
-Range=8
+Productivity=12
+Range=12
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -163,6 +163,9 @@ BackImage[3][1][0][0][0][1]=car-dealership.3.3
 upgrade[0]=CarDealership1970
 
 --------------------
+# Car dealerships should sell ~100-200 cars per month, especially late game. 
+# https://www.reddit.com/r/askcarsales/comments/2x0cvn/how_many_cars_does_your_dealership_sale_compared/
+# This is technically not done in terms of simutrans time, but because car factories produce so much, some amount of fudging is required.
 Obj=factory
 name=CarDealership1970
 copyright=James
@@ -186,8 +189,8 @@ class_proportion_jobs[4]=5
 level=1
 Location=City
 distributionweight=6
-Productivity=8
-Range=16
+Productivity=24
+Range=24
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
