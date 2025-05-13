@@ -40,8 +40,8 @@ OutputCapacity[0]=12
 OutputFactor[0]=50  
 OutputGood[1]=cider
 OutputCapacity[1]=48 
-OutputFactor[1]=100
-field_output_divider=4
+OutputFactor[1]=50
+field_output_divider=30
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=orchard.0.0
 BackImage[0][1][0][0][0][0]=orchard.0.1
@@ -114,11 +114,11 @@ electricity_boost=250
 MapColor=128
 OutputGood[0]=fruit
 OutputCapacity[0]=24 
-OutputFactor[0]=67  
+OutputFactor[0]=50  
 OutputGood[1]=cider
 OutputCapacity[1]=72 
-OutputFactor[1]=100
-field_output_divider=4
+OutputFactor[1]=59
+field_output_divider=30
 Dims=1,2,4
 
 BackImage[0][0][0][0][0][0]=orchard.0.0
@@ -140,10 +140,10 @@ BackImage[3][0][1][0][0][1]=orchard.3.3
 
 fields[0]=OrchardTrees
 probability_to_spawn=20
-production_per_field[0]=2
+production_per_field[0]=1
 max_fields=194
 min_fields=49
-start_fields=52
+start_fields=72
 has_snow[0]=1
 needs_ground=1
 upgrade[0]=Orchard1910
@@ -182,12 +182,12 @@ electricity_amount=1
 electricity_boost=320
 MapColor=128
 OutputGood[0]=fruit
-OutputCapacity[0]=54 
-OutputFactor[0]=100  
+OutputCapacity[0]=96 
+OutputFactor[0]=50 
 OutputGood[1]=cider
-OutputCapacity[1]=72 
-OutputFactor[1]=67
-field_output_divider=4
+OutputCapacity[1]=96 
+OutputFactor[1]=50
+field_output_divider=28
 Dims=1,2,4
 
 BackImage[0][0][0][0][0][0]=orchard.0.0
@@ -209,15 +209,16 @@ BackImage[3][0][1][0][0][1]=orchard.3.3
 
 fields[0]=OrchardTrees
 probability_to_spawn=20
-production_per_field[0]=2
-max_fields=207
+production_per_field[0]=1
+max_fields=250
 min_fields=52
-start_fields=55
+start_fields=96
 has_snow[0]=1
 needs_ground=1
 upgrade[0]=Orchard1945
 upgrade[1]=Orchard1975
 ----------------------------------------
+# Traditional orchards produce ~27t/hectare
 Obj=factory
 name=Orchard1945
 intro_year=1945
@@ -250,12 +251,12 @@ electricity_amount=1
 electricity_boost=400
 MapColor=128
 OutputGood[0]=fruit
-OutputCapacity[0]=72 
-OutputFactor[0]=100  
+OutputCapacity[0]=120 
+OutputFactor[0]=50 
 OutputGood[1]=cider
 OutputCapacity[1]=120 
-OutputFactor[1]=100
-field_output_divider=4
+OutputFactor[1]=50
+field_output_divider=18
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=orchard.0.0
 BackImage[0][1][0][0][0][0]=orchard.0.1
@@ -276,14 +277,21 @@ BackImage[3][0][1][0][0][1]=orchard.3.3
 
 fields[0]=OrchardTrees
 probability_to_spawn=20
-production_per_field[0]=3
-max_fields=220
-min_fields=55
-start_fields=82
+production_per_field[0]=1
+max_fields=440
+min_fields=110
+start_fields=164
 has_snow[0]=1
 needs_ground=1
 upgrade[0]=Orchard1975
 --------------------
+# Modern farming techniques produce apple yields of ~50 tonnes/hectare.
+# 50t/hectare -> 78.125t/tile / (365 * 24 hours) * 6.4 = 0.05708t/month/tile
+# For 128 tile orchard @ 730kg/crate, we get ~10 crates of fruit/month. Let's double the size of our late-game orchards to ~256 tiles to get 20 crates total.
+# In terms of cider yields: 1 ton of apples (0.9t, or 1.23 crates) equals ~600L of cider, or 3.8 barrels, so ~3 barrels per crate of apples, meaning that if we aim for an equal amount of both then cider production takes up ~1/4 of apple production
+# Therefore total yield for a late-game orchard is 15 crates fruit, 15 barrels cider.
+# Apple yield source: https://wikifarmer.com/library/en/article/apple-tree-harvest-yields
+# Cider yield source: https://www.fruitandnut.ie/growingciderapples.html
 Obj=factory
 name=Orchard1975
 intro_year=1975
@@ -315,12 +323,12 @@ electricity_amount=1
 electricity_boost=750
 MapColor=128
 OutputGood[0]=fruit
-OutputCapacity[0]=54 
-OutputFactor[0]=100  
+OutputCapacity[0]=160 
+OutputFactor[0]=50  
 OutputGood[1]=cider
-OutputCapacity[1]=135 
-OutputFactor[1]=100
-field_output_divider=4
+OutputCapacity[1]=160
+OutputFactor[1]=50
+field_output_divider=15
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=orchard.0.0
 BackImage[0][1][0][0][0][0]=orchard.0.1
@@ -340,10 +348,10 @@ BackImage[3][0][0][0][0][1]=orchard.3.2
 BackImage[3][0][1][0][0][1]=orchard.3.3
 fields[0]=OrchardTrees
 probability_to_spawn=15
-production_per_field[0]=4
-max_fields=326
-min_fields=82
-start_fields=128
+production_per_field[0]=1
+max_fields=652
+min_fields=164
+start_fields=256
 has_snow[0]=1
 needs_ground=1
 --
