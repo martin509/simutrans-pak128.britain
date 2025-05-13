@@ -36,11 +36,11 @@ MapColor=5
 sound=felix-blume-sheep-farm.wav
 OutputGood[0]=livestock
 OutputCapacity[0]=10
-OutputFactor[0]=44
+OutputFactor[0]=20
 OutputGood[1]=wool
 OutputCapacity[1]=23
-OutputFactor[1]=100
-field_output_divider=640
+OutputFactor[1]=17
+field_output_divider=2
 Dims=1,1,4
 BackImage[0][0][0][0][0][0]=sheep-farm-house_W.0
 BackImage[3][0][0][0][0][0]=sheep-farm-house_N.0
@@ -58,9 +58,9 @@ fields[2]=SheepField-2
 fields[3]=SheepField-3
 probability_to_spawn=25
 production_per_field[0]=1
-max_fields=12
+max_fields=24
 min_fields=1
-start_fields=8
+start_fields=12
 needs_ground=1
 
 has_snow[0]=1
@@ -133,11 +133,11 @@ MapColor=5
 sound=felix-blume-sheep-farm.wav
 OutputGood[0]=livestock
 OutputCapacity[0]=50
-OutputFactor[0]=33
+OutputFactor[0]=21
 OutputGood[1]=wool
 OutputCapacity[1]=65
-OutputFactor[1]=100
-field_output_divider=600
+OutputFactor[1]=18
+field_output_divider=2
 Dims=1,1,4
 
 BackImage[0][0][0][0][0][0]=sheep-farm-house_W.0
@@ -152,10 +152,10 @@ BackImage[1][0][0][0][0][1]=sheep-farm-house-snow_S.0
 
 fields[0]=SheepField
 probability_to_spawn=30
-production_per_field[0]=2
-max_fields=24
+production_per_field[0]=1
+max_fields=32
 min_fields=1
-start_fields=12
+start_fields=20
 needs_ground=1
 has_snow[0]=1
 upgrade[0]=SheepFarm1910
@@ -194,11 +194,11 @@ electricity_boost=320
 MapColor=5
 OutputGood[0]=livestock
 OutputCapacity[0]=90
-OutputFactor[0]=33
+OutputFactor[0]=21
 OutputGood[1]=wool
-OutputCapacity[1]=270
-OutputFactor[1]=100
-field_output_divider=575
+OutputCapacity[1]=120
+OutputFactor[1]=19
+field_output_divider=2
 Dims=1,1,4
 
 BackImage[0][0][0][0][0][0]=sheep-farm-house_W.0
@@ -213,10 +213,10 @@ BackImage[1][0][0][0][0][1]=sheep-farm-house-snow_S.0
 
 fields[0]=SheepField
 probability_to_spawn=30
-production_per_field[0]=3
-max_fields=32
-min_fields=1
-start_fields=18
+production_per_field[0]=1
+max_fields=50
+min_fields=2
+start_fields=32
 needs_ground=1
 has_snow[0]=1
 upgrade[0]=SheepFarm1945
@@ -255,11 +255,11 @@ MapColor=5
 sound=felix-blume-sheep-farm.wav
 OutputGood[0]=livestock
 OutputCapacity[0]=96
-OutputFactor[0]=30
+OutputFactor[0]=23
 OutputGood[1]=wool
-OutputCapacity[1]=324
-OutputFactor[1]=100
-field_output_divider=550
+OutputCapacity[1]=150
+OutputFactor[1]=20
+field_output_divider=2
 Dims=1,1,4
 
 BackImage[0][0][0][0][0][0]=sheep-farm-house_W.0
@@ -276,9 +276,9 @@ fields[0]=SheepField
 
 probability_to_spawn=30
 production_per_field[0]=1
-max_fields=40
-min_fields=2
-start_fields=24
+max_fields=80
+min_fields=4
+start_fields=48
 needs_ground=1
 has_snow[0]=1
 upgrade[0]=SheepFarm1975
@@ -291,6 +291,11 @@ upgrade[0]=SheepFarm1975
 # Per game "month" at 6.4 hours, this equates to 0.7kg of wool per tile.
 # Each sack of wool is 380kg. This requires 278 tiles to produce 1 unit
 # per month. Assume flock sizes of 250 - 10,000.
+
+# But what if... I assumed real-life years instead of Simutrans hours?
+# 1t of wool per tile -> 2.6 sacks/year/tile -> 0.21 sacks/month/tile
+# Assume also a culling rate of 15%/year (https://www.ontario.ca/page/measuring-sheep-flock-productivity)
+# This comes out to ~8 livestock/month or 0.25 livestock/tile
 Obj=factory
 name=SheepFarm1975
 intro_year=1975
@@ -321,12 +326,12 @@ electricity_boost=750
 MapColor=5
 sound=felix-blume-sheep-farm.wav
 OutputGood[0]=livestock
-OutputCapacity[0]=105
-OutputFactor[0]=28
+OutputCapacity[0]=200
+OutputFactor[0]=25
 OutputGood[1]=wool
-OutputCapacity[1]=378
-OutputFactor[1]=100
-field_output_divider=542
+OutputCapacity[1]=256
+OutputFactor[1]=21
+field_output_divider=2
 Dims=1,1,4
 
 BackImage[0][0][0][0][0][0]=sheep-farm-house_W.0
@@ -342,9 +347,9 @@ BackImage[1][0][0][0][0][1]=sheep-farm-house-snow_S.0
 fields[0]=SheepField
 probability_to_spawn=25
 production_per_field[0]=1
-max_fields=50
-min_fields=2
-start_fields=32
+max_fields=100
+min_fields=4
+start_fields=64
 needs_ground=1
 has_snow[0]=1
 --

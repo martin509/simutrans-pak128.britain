@@ -42,12 +42,12 @@ max_distance_to_consumer=12
 MapColor=34
 sound=tdes-cow-farm.wav
 OutputGood[0]=livestock
-OutputCapacity[0]=35  
-OutputFactor[0]=20
+OutputCapacity[0]=15  
+OutputFactor[0]=25
 OutputGood[1]=milk
-OutputCapacity[1]=35  
-OutputFactor[1]=100
-field_output_divider=110
+OutputCapacity[1]=15  
+OutputFactor[1]=90
+field_output_divider=120
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=cattle-farm-house.0.0
 BackImage[0][1][0][0][0][0]=cattle-farm-house.0.1
@@ -174,9 +174,9 @@ OutputGood[0]=livestock
 OutputCapacity[0]=20  
 OutputFactor[0]=25
 OutputGood[1]=milk
-OutputCapacity[1]=50  
-OutputFactor[1]=100
-field_output_divider=96
+OutputCapacity[1]=30  
+OutputFactor[1]=90
+field_output_divider=120
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=cattle-farm-house.0.0
 BackImage[0][1][0][0][0][0]=cattle-farm-house.0.1
@@ -245,11 +245,11 @@ sound=tdes-cow-farm.wav
 max_distance_to_consumer=160
 OutputGood[0]=livestock
 OutputCapacity[0]=63  
-OutputFactor[0]=75
+OutputFactor[0]=25
 OutputGood[1]=milk
 OutputCapacity[1]=84  
-OutputFactor[1]=100
-field_output_divider=72
+OutputFactor[1]=90
+field_output_divider=120
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=cattle-farm-house.0.0
 BackImage[0][1][0][0][0][0]=cattle-farm-house.0.1
@@ -278,7 +278,7 @@ probability_to_spawn=30
 production_per_field[0]=1
 max_fields=40
 min_fields=10
-start_fields=25
+start_fields=24
 has_snow[0]=1
 upgrade[0]=CattleFarm1945
 upgrade[1]=CattleFarm1975
@@ -318,11 +318,11 @@ sound=tdes-cow-farm.wav
 max_distance_to_consumer=200
 OutputGood[0]=livestock
 OutputCapacity[0]=95  
-OutputFactor[0]=28
+OutputFactor[0]=25
 OutputGood[1]=milk
 OutputCapacity[1]=112  
 OutputFactor[1]=100
-field_output_divider=48
+field_output_divider=108
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=cattle-farm-house.0.0
 BackImage[0][1][0][0][0][0]=cattle-farm-house.0.1
@@ -348,14 +348,14 @@ fields[4]=CattleField-4
 fields[5]=CattleField-5
 fields[6]=CattleField-6
 probability_to_spawn=30
-production_per_field[0]=2
-max_fields=48
-min_fields=12
-start_fields=36
+production_per_field[0]=1
+max_fields=80
+min_fields=20
+start_fields=48
 has_snow[0]=1
 upgrade[0]=CattleFarm1975
 --------------------
-# Assume: heard size of 100, 0.5ha per cow,
+# Assume: heard size of 100, 0.5ha per cow
 # 5kl of milk per cow per annum.
 # This would give 50ha of fields (being 32 tiles 
 # at 125m/tile) and a production per game month
@@ -363,6 +363,12 @@ upgrade[0]=CattleFarm1975
 # each churn takes 77l, and each unit of cargo 
 # is 5 churns, the "monthly" production is 0.948 
 # units.
+
+# But what if... I assumed real-time instead of Simutrans "months"?
+# This comes out to 1.297 churns/cow/annum, or monthly prod. of 10.8 churns/month for 32-tile farm (0.3375 churns/tile)
+# Dairy farms typically also see a culling rate of ~30% per year.
+# This equates to ~2.5 livestock/month for a 32-tile farm, or 0.08 livestock/tile. 
+# While using real-life months is inconsistent with other industries it does mean that bigger farms will actually produce more and that a typical map will not need to be completely coated in farms.
 Obj=factory
 name=CattleFarm1975
 intro_year=1975
@@ -396,11 +402,11 @@ sound=tdes-cow-farm.wav
 max_distance_to_consumer=160
 OutputGood[0]=livestock
 OutputCapacity[0]=144  
-OutputFactor[0]=32
+OutputFactor[0]=25
 OutputGood[1]=milk
 OutputCapacity[1]=144  
-OutputFactor[1]=100
-field_output_divider=32
+OutputFactor[1]=108
+field_output_divider=96
 Dims=1,2,4
 BackImage[0][0][0][0][0][0]=cattle-farm-house.0.0
 BackImage[0][1][0][0][0][0]=cattle-farm-house.0.1
@@ -427,8 +433,8 @@ fields[5]=CattleField-5
 fields[6]=CattleField-6
 probability_to_spawn=25
 production_per_field[0]=1
-max_fields=64
-min_fields=16
-start_fields=48
+max_fields=132
+min_fields=30
+start_fields=96
 has_snow[0]=1
 --
