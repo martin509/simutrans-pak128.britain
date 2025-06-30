@@ -163,6 +163,11 @@ BackImage[3][1][0][0][0][1]=car-dealership.3.3
 upgrade[0]=CarDealership1970
 
 --------------------
+# Average IRL car dealership sq. footage = 21,000 = 1950 m^2
+# Each ingame dealership is 1x2 -> 125*250 = 31250 m^2 / 1950 = 16x multiplier
+# Let's say each dealership sells 100 cars/month on the high end -> 1200 cars/year
+# 1200/365.24/8 = 0.41 cars/hour * 6.4 = 2.628 cars/month * 16 = 42 cars/month
+
 Obj=factory
 name=CarDealership1970
 copyright=James
