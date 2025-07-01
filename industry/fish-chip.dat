@@ -35,11 +35,11 @@ InputFactor[0]=75
 #InputSupplier[0]=1
 InputGood[1]=vegetables
 InputCapacity[1]=12 
-InputFactor[1]=20  
+InputFactor[1]=50  
 #InputSupplier[1]=1
 InputGood[2]=flour
-InputCapacity[2]=8 
-InputFactor[2]=5  
+InputCapacity[2]=23 
+InputFactor[2]=9  
 #InputSupplier[2]=1
 needs_ground=1
 Dims=1,1,4
@@ -48,6 +48,20 @@ BackImage[1][0][0][0][0]=1950pubs.1.1
 BackImage[0][0][0][0][0]=1950pubs.1.2
 BackImage[3][0][0][0][0]=1950pubs.1.3
 --------------------
+# There are 10,500 fish&chip shops in the UK, serving 167 million meals a year (https://greatbritishfish.com/fish-and-chips)
+
+# From a recipe online: ~200g of fish, 225g of potatoes, and ~50g of flour per meal
+# This means 33,400 tonnes of fish, 37,575 tonnes of potatoes, and 8,350 tonnes of flour
+# This is 3.18 tonnes of fish, 3.58t potatoes, and 0.795t flour per shop per year
+# 410kg per crate of fish = 7.75 crates/shop/year, which comes out to 0.017 crates per Simutrans month
+# Let's say a typical IRL fish and chip shop is 100 sqft -> 9.3 m^2
+# The smallest Simutrans tile is 125mx125m -> 15,625 m^2
+# Correction factor is therefore 1680
+#
+# 1680 * 0.017 = 28.56 crates/month of fish
+# 28.56 * (225g potatoes /200g fish ) * (410kg per crate fish/700kg per crate vegetables) = 18.8 crates vegetables/month
+# 28.56 * (50g flour / 200g fish) * (410kg/crate(fish) / 840kg/crate(flour)) = 3.5 crates of flour/month
+
 Obj=factory
 name=Fish-ChipShop1975
 intro_year=1975
@@ -83,11 +97,11 @@ InputFactor[0]=75
 #InputSupplier[0]=1
 InputGood[1]=vegetables
 InputCapacity[1]=18
-InputFactor[1]=20  
+InputFactor[1]=50  
 #InputSupplier[1]=1
 InputGood[2]=flour
 InputCapacity[2]=12 
-InputFactor[2]=5  
+InputFactor[2]=9 
 #InputSupplier[2]=1
 needs_ground=1
 Dims=1,1,4
