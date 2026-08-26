@@ -27,8 +27,8 @@ needs_ground=1
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
 distributionweight=10
-Productivity=2
-Range=2
+Productivity=3
+Range=3
 passenger_boost=800
 mail_boost=200
 electricity_amount=0
@@ -95,8 +95,8 @@ needs_ground=1
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
 distributionweight=11
-Productivity=4
-Range=4
+Productivity=7
+Range=6
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -105,7 +105,7 @@ MapColor=103
 InputGood[0]=Cement
 InputCapacity[0]=64 
 #InputSupplier[0]=1
-InputFactor[0]=14
+InputFactor[0]=15
 InputGood[1]=Bretter
 InputCapacity[1]=96
 #InputSupplier[1]=1 
@@ -146,6 +146,7 @@ upgrade[0]=BuildersYard1850
 upgrade[1]=BuildersYard1905
 
 --------------------
+# Working backwards from BuildersYard1905, we halve cement consumption again to reflect this being the early days of use of cement in construction. We distribute this to bricks and wood 1:1.
 Obj=factory
 name=BuildersYard1850
 copyright=James
@@ -171,8 +172,8 @@ needs_ground=1
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
 distributionweight=16
-Productivity=8
-Range=8  
+Productivity=14
+Range=13  
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -181,19 +182,19 @@ MapColor=103
 InputGood[0]=Cement
 InputCapacity[0]=128 
 #InputSupplier[0]=1
-InputFactor[0]=18
+InputFactor[0]=21
 InputGood[1]=Bretter
 InputCapacity[1]=192
 #InputSupplier[1]=1 
-InputFactor[1]=27
+InputFactor[1]=17
 InputGood[2]=bricks
 InputCapacity[2]=240
 #InputSupplier[2]=1
-InputFactor[2]=33
+InputFactor[2]=37
 InputGood[3]=Stahl
 InputCapacity[3]=160
 #InputSupplier[3]=1
-InputFactor[3]=36
+InputFactor[3]=25
 Dims=2,1,4
 pier_sub_1_mask=0x1F
 pier_sub_2_mask=0xFFFFFFFF
@@ -218,6 +219,14 @@ upgrade[0]=BuildersYard1905
 upgrade[1]=BuildersYard1960
 
 --------------------
+# In 1930, Canadian industry consumed 11,032,538 barrels of cement, with construction industry employment of ~250,000 (https://www66.statcan.gc.ca/eng/1961/196107050685_p.%20685.pdf)
+# Each barrel is 171kg, for a total of 1,886,564t of cement production
+# This comes out to 7.54t per worker, which we scale to 1985's 14.9t/worker, or a ratio of 50.6%.
+# Scaled to 85 employment here vs. 125 in 1985, that's a ratio of 34% as much cement consumption, or ~34t of cement/month.
+# In addition in 1930 the Canadian brick industry produced 319,846,711 bricks from clay, assuming 3kg/brick this is 959,540t of bricks. This comes out to 4.68 crates/worker/year which equals, for a 3000 person jobsite, 30.75 crates per simutrans month vs. 35.3 in 1985, or a ratio of 87%.
+# Scaled to 85 employment/125 vs. 1985, this comes to 59% as much brick consumption as 1985, or ~21 crates/month.
+# In 1985 we have 99.7+35.3=135 consumption of the 2, in 1930 we have 34+21=55 consumption, so 40% as much productivity on average.
+# All this comes out to the split of cement to bricks being 42-26 instead of 50-18.
 Obj=factory
 name=BuildersYard1905
 copyright=James
@@ -243,8 +252,8 @@ needs_ground=1
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
 distributionweight=12
-Productivity=10
-Range=8
+Productivity=40
+Range=35
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -253,19 +262,19 @@ MapColor=103
 InputGood[0]=Cement
 InputCapacity[0]=192 
 #InputSupplier[0]=1
-InputFactor[0]=44
+InputFactor[0]=42
 InputGood[1]=Bretter
 InputCapacity[1]=288
 #InputSupplier[1]=1 
-InputFactor[1]=27
+InputFactor[1]=7
 InputGood[2]=bricks
 InputCapacity[2]=360
 #InputSupplier[2]=1
-InputFactor[2]=92
+InputFactor[2]=26
 InputGood[3]=Stahl
 InputCapacity[3]=240
 #InputSupplier[3]=1
-InputFactor[3]=77
+InputFactor[3]=25
 Dims=2,1,4
 pier_sub_1_mask=0x1F
 pier_sub_2_mask=0xFFFFFFFF
@@ -290,6 +299,11 @@ upgrade[0]=BuildersYard1960
 upgrade[1]=BuildersYard1985
 
 --------------------
+# Based off Canadian cement production in 1977 vs. 2000 (and employment in the construction industry in the respective years), there are roughly ~13.4t/worker/year in 1977 vs ~14.9 in 2000. 
+# We will scale cement consumption accordingly for 1960 vs 1985 builders' yards.
+# 13.4/14.9 * 50 = 45
+# We use this, alongside the employment_capacity, to scale the productivity: 100 * 45/50 * 70/125 = 50
+# Basically we keep the ratios the same here but overall productivity is halved.
 Obj=factory
 name=BuildersYard1960
 copyright=James
@@ -315,8 +329,8 @@ needs_ground=1
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
 distributionweight=8
-Productivity=14
-Range=12
+Productivity=50
+Range=43
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -325,19 +339,19 @@ MapColor=103
 InputGood[0]=Cement
 InputCapacity[0]=384 
 #InputSupplier[0]=1
-InputFactor[0]=88
+InputFactor[0]=50
 InputGood[1]=Bretter
 InputCapacity[1]=432
 #InputSupplier[1]=1 
-InputFactor[1]=28
+InputFactor[1]=7
 InputGood[2]=bricks
 InputCapacity[2]=480
 #InputSupplier[2]=1
-InputFactor[2]=79
+InputFactor[2]=18
 InputGood[3]=Stahl
 InputCapacity[3]=320
 #InputSupplier[3]=1
-InputFactor[3]=77
+InputFactor[3]=25
 Dims=2,1,4
 pier_sub_1_mask=0x1F
 pier_sub_2_mask=0xFFFFFFFF
@@ -361,6 +375,16 @@ BackImage[3][1][0][0][0][1]=builders-yard-modern.3.3
 upgrade[0]=BuildersYard1985
 
 --------------------
+# Assumption 1: Based off this quora post (https://www.quora.com/How-many-construction-workers-are-needed-to-build-a-22-000-sq-ft-museum-in-1-2-years), a 22,000 sq.ft building requires around 150-250 workers to build it. 
+# Ingame builders' yards are 1x2 tiles, which comes out to 336,000 sq.ft, which comes out to ~3,000 workers per builders' yard. We will not deal with floor area ratios as these numbers are hard to find, so we will assume an average FAR of ~1.0.
+# Also we will probably not go for a 3,000-worker builders' yard, just because that would be impractical to actually staff in-game.
+# Based off taking amounts consumed by the UK construction industry (the entirety of cement and brick production, ~50% of steel production, and 5M tonnes/year direct quote for softwood timber), we divide those amounts by 2016 UK construction industry employment (1.35M employees).
+# This gets us, for a modern builders' yard:
+# 99.7t of concrete
+# 12.9t of planks
+# 35.3 crates of bricks
+# 48.62t of steel
+# Since these numbers are ROUGHLY compatible with the production figures for associated industries, we'll go with them, and scale these proportionally backwards.
 Obj=factory
 name=BuildersYard1985
 copyright=James
@@ -368,7 +392,7 @@ intro_year=1985
 intro_month=12
 pax_level=6
 population_and_visitor_demand_capacity=310
-employment_capacity=45
+employment_capacity=125
 mail_demand=16
 class_proportion[0]=20
 class_proportion[1]=67
@@ -384,8 +408,8 @@ needs_ground=1
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
 distributionweight=4
-Productivity=15
-Range=13
+Productivity=100
+Range=87
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -394,19 +418,19 @@ MapColor=103
 InputGood[0]=Cement
 InputCapacity[0]=432 
 #InputSupplier[0]=1
-InputFactor[0]=123
+InputFactor[0]=50
 InputGood[1]=Bretter
 InputCapacity[1]=288
 #InputSupplier[1]=1 
-InputFactor[1]=23
+InputFactor[1]=7
 InputGood[2]=bricks
 InputCapacity[2]=240
 #InputSupplier[2]=1
-InputFactor[2]=78
+InputFactor[2]=18
 InputGood[3]=Stahl
 InputCapacity[3]=360
 #InputSupplier[3]=1
-InputFactor[3]=88
+InputFactor[3]=25
 Dims=2,1,4
 pier_sub_1_mask=0x1F
 pier_sub_2_mask=0xFFFFFFFF
