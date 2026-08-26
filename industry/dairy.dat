@@ -152,9 +152,9 @@ class_proportion_jobs[4]=0
 needs_ground=1
 climates=rocky,tundra,temperate,desert,mediterran,arctic,tropic
 Location=City
-distributionweight=10
+distributionweight=15
 Productivity=15
-Range=6
+Range=9
 passenger_boost=600
 mail_boost=150
 electricity_amount=3
@@ -214,19 +214,21 @@ class_proportion_jobs[4]=0
 needs_ground=1
 climates=rocky,tundra,temperate,desert,mediterran,arctic,tropic
 Location=City
-distributionweight=5
-Productivity=20
-Range=8
+distributionweight=6
+Productivity=64
+Range=32
 passenger_boost=600
 mail_boost=150
 electricity_amount=4
 electricity_boost=1250
 MapColor=175
 InputGood[0]=milk
-InputCapacity[0]=192
+InputCapacity[0]=750
+InputFactor[0]=100
 #InputSupplier[0]=1
-# When the supermarket chain is completed, diaries of this age out output packaged food (we now have supermarkets but not food packaging plants or packaged food).
-
+OutputGood[0]=canned_food
+OutputCapacity[0]=48
+OutputFactor[0]=6   
 expand_probability=10
 expand_minimum=18
 expand_range=6
@@ -252,6 +254,19 @@ BackImage[3][1][0][0][0][0]=dairy-modern.3.1
 BackImage[3][0][0][0][0][1]=dairy-modern.3.2
 BackImage[3][1][0][0][0][1]=dairy-modern.3.3
 --------------------
+# https://www.gov.uk/government/statistics/historical-national-statistics-notices-on-milk-utilisation-by-dairies-2023/usage-of-milk-by-dairies-in-the-united-kingdom-statistics-april-2023-published-01-june-2023
+# In 2023, dairies consumed 1,239 million L of milk and produced 531 million L of liquid milk
+# This leaves 708 million L of milk for producing processed products
+# They output 44,400t of cheese, 19,300t of butter, and 7,700t of milk powder. (total 71,400t)
+# Cheddar: 9.5 L/kg, butter: 2.04 L/kg, milk powder: 10.3 L/kg (average of 3 methods)
+# Cheddar: 9.5 L/kg * 820kg / 385L = 20.2:1
+# Butter: 2.04 * 820 / 385 = 4.34:1
+# Milk powder: 10.3 * 820 / 385 = 21.9:1
+# Average ratio given that mix: 16.09:1, or 100:6
+# https://fromagestalbert.com/our-products/faq/?lang=en 
+# The St. Albert cheese factory in Canada takes up ~12,500 m^2, and takes in 80,000L of milk per day.
+# This means a 1x2 dairy takes in 160,000L of milk every 8 hours, or (160/8*6.4)=128,000L of milk every Simutrans month.
+# This comes out to 332 churns(x5) of milk per month.
 Obj=factory
 name=Dairy1975
 intro_year=1975
@@ -274,19 +289,22 @@ class_proportion_jobs[4]=0
 needs_ground=1
 climates=rocky,tundra,temperate,desert,mediterran,arctic,tropic
 Location=City
-distributionweight=2
-Productivity=25 
-Range=12
+distributionweight=4
+Productivity=100
+Range=48
 passenger_boost=600
 mail_boost=150
 electricity_amount=5
 electricity_boost=1320
 MapColor=175
 InputGood[0]=milk
-InputCapacity[0]=384
+InputCapacity[0]=1500
+InputFactor[0]=100
 #InputSupplier[0]=1
 # When the supermarket chain is completed, diaries of this age out output packaged food (we now have supermarkets but not food packaging plants or packaged food).
-
+OutputGood[0]=canned_food
+OutputCapacity[0]=96
+OutputFactor[0]=6   
 expand_probability=9
 expand_minimum=20
 expand_range=8
