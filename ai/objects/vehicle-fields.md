@@ -111,4 +111,6 @@ at `7655609` unless stated otherwise.
 
 ## Open questions
 
-- None.
+- What historical sources calibrate `brake_force` values? None located: thread 8087 covers
+  only the braking-distance formula, and `.dat` comments cross-reference other vehicles
+  (for example Class 331 reuses Class 195 brakes).
