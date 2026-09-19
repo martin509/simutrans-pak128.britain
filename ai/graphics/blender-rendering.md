@@ -1,6 +1,6 @@
 ---
 status: draft
-verified: none
+verified: New master @ 4fffcc19e
 ---
 # Blender rendering
 
@@ -68,6 +68,11 @@ From the revised graphics workflow in forum post
   transparency; the post describes the alternatives.
   `[FORUM:https://forum.simutrans.com/index.php/topic,2401.msg162208.html#msg162208]`
 
+## AI authorship of `.blend` sources
+
+- `.blend` sources are authored manually. Language-model attempts in September 2026 demonstrated
+  incapability of even basic spatial reasoning within Blender. `[EXECUTION-VERIFIED:2026-09-19]`
+
 ## Related docs
 
 - [liveries-and-special-colours](liveries-and-special-colours.md) — read when handling special colours and liveries.
@@ -76,6 +81,8 @@ From the revised graphics workflow in forum post
 
 ## Open questions
 
+- Under what demonstrated conditions may AI-authored `.blend` geometry be accepted? See the AI
+  authorship section above.
 - What is the exact command line used to render a blend file headless, and is it automated?
 - Are there other render scripts in use besides `...-65.py`, and which is canonical?
 - Which blend produces which `.png` and `.dat` object?
