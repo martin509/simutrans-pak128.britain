@@ -62,7 +62,9 @@ be economically and historically realistic.
   `[CODE simutrans-extended ex-15 @ d4893f3]`
 - Coverage: vehicle purchase, running, fixed and upgrade costs; passenger, mail and goods fares;
   way, bridge, tunnel, signal, roadsign and way-object construction and maintenance; buildings,
-  depots and stations; the `cst_*` settings; corporation tax; land values; and overdraft
+  depots and stations; the `cst_*` construction-cost settings (dock, station, roadstop,
+  airterminal, post, headquarters, depot, land alteration, tree removal, building removal and
+  transformer multipliers); corporation tax; land values; and overdraft
   interest via `base rate`. `[CODE simutrans-extended ex-15 @ d4893f3]`
 - Savegames: the price tables are stored in saves on extended version 15 and above, and the
   pakset-directory file is re-read on load. `[CODE simutrans-extended ex-15 @ d4893f3]`

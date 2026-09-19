@@ -8,9 +8,9 @@ verified: none
 
 ## Initial facts
 
-- Source folder: `New/industry/`. Example properties (from `brewery.dat`) include `name`,
-  `intro_year`, `intro_month`, `retire_year`, `retire_month`, `copyright`, `level`, and
-  `population_and_visitor_demand_capacity`. `[CODE New master @ e36ec2321]`
+- Source folder: `New/industry/`. Each factory names its goods, dates, level, and
+  staffing capacity; field meanings are a planned section below.
+  `[CODE New master @ e36ec2321]`
 - Industrial buildings can also be `Obj=building` with `type=ind`; these are distinct from
   factories. See [city-buildings](buildings/city-buildings.md).
   `[CODE New master @ e36ec2321]`

@@ -19,9 +19,12 @@ verified: New master @ 92c7b701c
 - The `copy` target copies `config/`, `text/`, `sound/`, `demo.sve`, `licence.txt`, `compat.tab`,
   and `symbol.BigLogo.pak` into the built pakset; these are used directly and not compiled.
   `[CODE New master @ e36ec2321]`
-- `New/makeALL.mos` (MOScript, run with mose.py) is an alternative build; `New/parameter.mos`
-  defines the absolute makeobj path and output directory. `New/pak128Britain.bat` is a further
-  Windows alternative. `[CODE New master @ e36ec2321]`
+- `New/makeALL.mos` (MOScript, run with mose.py) is an alternative build: `!mose
+  min_version 3` requires MOScript version 3 or newer, and `!size` sets the pak size class
+  for the folders built after it. `New/parameter.mos`
+  defines the absolute makeobj path (`!makeobj`) and output directory (`!OUTPUT`).
+  `New/pak128Britain.bat` is a further Windows alternative taking destination and source
+  arguments. `[CODE New master @ e36ec2321]`
 - Several makeobj builds are present in `New/` (for example `Makeobj-Extended.exe`,
   `Makeobj-Extended-ex-15.exe`, `makeobj-extended`). makeobj binaries are ignored by
   `New/.gitignore`. `[CODE New master @ e36ec2321]`

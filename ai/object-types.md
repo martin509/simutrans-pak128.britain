@@ -14,7 +14,7 @@ lost. Read the child doc for the type a task touches.
 
 ## Type docs
 
-- [vehicle](objects/vehicle.md) — read when touching trains, buses, trams, boats, aircraft, or any `Obj=vehicle`.
+- [vehicle](objects/vehicle.md) — read when touching trains, buses, trams, boats, aircraft, or any `Obj=vehicle`. Keys the [field reference](objects/vehicle-fields.md), [coupling constraints](objects/coupling-constraints.md), and [way constraints](objects/way-constraints.md) child docs.
 - [building](objects/building.md) — read when touching any `Obj=building`; keys the city, public, and town hall child docs.
 - [way](objects/way.md) — read when touching any `Obj=way` (track, road, tram, water, air, power). Keys the `elevated-ways` child doc.
 - [bridge](objects/bridge.md) — read when touching `Obj=bridge`.

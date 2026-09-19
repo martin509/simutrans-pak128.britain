@@ -43,11 +43,11 @@ Examples taken from the pakset:
 
 ## Values that are read from the same `.dat`
 
-Besides images, a `.dat` carries the object's economic and behavioural fields: for example a
-vehicle's `speed`, `waytype`, `weight`, `cost`, `runningcost`, `payload[...]`, and `Constraint`;
-a building's `Dims`, `Level`, `capacity`, `maintenance`, and `cost`. These fields are consumed by
-the engine and some of them are save/load-relevant; see
-[pakset-compatibility](pakset-compatibility.md) before changing them.
+Besides images, a `.dat` carries the object's economic and behavioural fields. Vehicle
+fields are explained in [vehicle fields](objects/vehicle-fields.md); goods fields in
+[goods](objects/good.md). Building, factory, way and other fields will be explained in
+their per-type docs as those docs are elaborated; some of them are save/load-relevant, so
+see [pakset-compatibility](pakset-compatibility.md) before changing them.
 `[CODE New master @ e36ec2321]`
 
 ## Validation and common errors

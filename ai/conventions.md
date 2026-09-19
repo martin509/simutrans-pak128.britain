@@ -48,6 +48,9 @@ care is taken to preserve all necessary data.
 - Agents propose doc changes; the user approves before commit (AGENTS.md hard rule 10).
 - Do not reference documents by line number or by other details that change as files are edited.
 - Prefer an open question over an unverified claim, always.
+- Never mention a data parameter in passing: every parameter named in a doc is either
+  explained in full there or given a brief inline summary with a link to the doc that
+  explains it.
 
 ## Adding assets and features
 

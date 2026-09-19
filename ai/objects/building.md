@@ -9,8 +9,10 @@ verified: none
 
 ## Initial facts
 
-- `type=` values present: `res`, `signalbox`, `stop`, `com`, `cur`, `depot`, `ind`, `extension`,
-  `mon`, `tow`, `habour`, and `hq`. `[CODE New master @ e36ec2321]`
+- `type=` values present: `res` (residential), `signalbox`, `stop` (stops and stations),
+  `com` (commercial), `cur` (curiosity/attraction), `depot`, `ind` (industrial),
+  `extension` (station extension), `mon` (monument), `tow` (town hall), `habour`
+  (harbour), and `hq` (headquarters). `[CODE New master @ e36ec2321]`
 - Source folders include `New/stations/` (stop), `New/depots/` (depot), `New/attractions/`
   (`cur`, `mon`), `New/citybuildings/` (`res`, `com`, `ind`), `New/signalboxes/` (signalbox),
   `New/townhall/` (`tow`), `New/hq/` (`hq`), and `New/piers/` (piers, a separate object type).

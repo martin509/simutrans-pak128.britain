@@ -9,8 +9,9 @@ vehicles run.
 
 ## Initial facts
 
-- `waytype=` values present: `track`, `road`, `narrowgauge_track`, `water`, `air`, `tram_track`,
-  `power`, and `maglev_track`. `[CODE New master @ e36ec2321]`
+- `waytype=` values present: `track` (railways), `road`, `narrowgauge_track`, `water`,
+  `air`, `tram_track`, `power` (power lines), and `maglev_track`.
+  `[CODE New master @ e36ec2321]`
 - Source folder: `New/ways/`. `[CODE New master @ e36ec2321]`
 - Elevated ways are also `Obj=way` objects distinguished by their name; see
   [elevated-ways](elevated-ways.md). `[CODE New master @ e36ec2321]`
