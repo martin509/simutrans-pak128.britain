@@ -1,6 +1,6 @@
 ---
-status: stub
-verified: none
+status: draft
+verified: New master @ 92c7b701c
 ---
 # Build and toolchain
 
@@ -28,10 +28,32 @@ verified: none
 - `New/Makefile` also has a `simutranslator` target that packages `.dat` and `.png` files into
   zips for upload to simutranslator. `[CODE New master @ e36ec2321]`
 
+## Build destination and engine workspace
+
+- `New/mkpak.sh` passes `DESTDIR=../../simutrans-extended-sources/simutrans` for both `make
+  clean` and `make -j12`. The destination is the engine workspace in the directory adjacent to
+  this base directory. `[CODE New master @ 92c7b701c]`
+- `New/Makefile` defaults `DESTDIR` to the current directory and writes the pakset to the
+  `pak128.Britain-Ex` subdirectory of the destination. `[CODE New master @ 92c7b701c]`
+- `New/parameter.mos` defines the `!makeobj` executable path and the `!OUTPUT` directory as
+  absolute paths inside the same engine workspace. `[CODE New master @ 92c7b701c]`
+
+## Alternative builds and observed differences
+
+- `New/makeALL.mos` declares `!mose min_version 3` and sets `!size` per folder. Its copy set
+  includes `readme.txt` in addition to the `New/Makefile` copy set of `config/`, `text/`,
+  `sound/`, `demo.sve`, `licence.txt`, `compat.tab`, and `symbol.BigLogo.pak`.
+  `[CODE New master @ 92c7b701c]`
+- `New/pak128Britain.bat` takes a destination argument and a source argument. It compiles the
+  `config/` folder into `BritConfig-Ex`, while `New/Makefile` copies `config/` directly without
+  compiling. Its `PAK32` step writes `Holds256-Ex` from `boats/holds/`.
+  `[CODE New master @ 92c7b701c]`
+- `New/.gitignore` excludes `makeobj-extended*`, `*.exe`, `*.pak`, and `*.sve`. The makeobj
+  binaries present in `New/` are therefore untracked. `[CODE New master @ 92c7b701c]`
+
 ## Planned sections
 
 - Which makeobj build is correct for which engine branch/version, and how that is determined.
-- How the build destination (`DESTDIR`) relates to the separate engine workspace.
 - Known build pitfalls.
 
 ## Open questions
