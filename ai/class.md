@@ -1,6 +1,6 @@
 ---
 status: draft
-verified: New master @ eff439751
+verified: New master @ 7a0a145e1
 ---
 # Classes
 
@@ -12,17 +12,51 @@ catering and travelling post offices modify revenue.
 - Passengers generate with a wealth class, 5 levels: `p_class[0]` Very low, `p_class[1]` Low,
   `p_class[2]` Medium, `p_class[3]` High, `p_class[4]` Very high, named in `New/text/en.tab`.
   `[CODE New master @ eff439751]`
-- Different buildings generate and demand different proportions of each class. Lower-class
-  passengers cannot afford high prices; each class travels on the lowest-journey-time route
-  available at prices it can pay. `[FORUM:https://forum.simutrans.com/index.php/topic,1959.0.html]`
+- Different buildings generate and demand different proportions of each class. Commuting
+  passengers never head for residential buildings; visiting passengers sometimes do.
+  Lower-class passengers cannot afford high prices; each class travels on the
+  lowest-journey-time route available at prices it can pay. Players set per-convoy and
+  per-vehicle prices to match what each class can pay, which lets aircraft, train and coach
+  coexist between the same points at different price points.
+  `[FORUM:https://forum.simutrans.com/index.php/topic,1959.0.html]`
 - Per-class fares use the `p_fare[i]` keys in `New/text/en.tab`.
   `[CODE New master @ eff439751]`
+- In very early eras only medium class and above can afford any passenger transport; moving
+  very low class passengers at a profit in the stagecoach era indicates a cost balancing
+  error, not a generation error.
+  `[FORUM:https://forum.simutrans.com/index.php/topic,21310.msg198349.html#msg198349]`
 
 ## Mail classes
 
-- Mail has 2 classes: `m_class[0]` Normal and `m_class[1]` Priority, with matching
-  `m_accommodation[i]` and `m_fare[i]` keys in `New/text/en.tab`.
-  `[CODE New master @ eff439751]`
+- Mail generates with an ability-to-pay class, 2 levels: `m_class[0]` Normal and
+  `m_class[1]` Priority, with matching `m_accommodation[i]` and `m_fare[i]` keys in
+  `New/text/en.tab`. `[CODE New master @ eff439751]`
+- As with passengers, lower-class mail cannot afford high prices and travels on the fastest
+  affordable route; players price convoys and vehicles to match.
+  `[FORUM:https://forum.simutrans.com/index.php/topic,1959.0.html]`
+- Unlike passengers, mail has no comfort mechanic; class differences act purely through price
+  and accommodation availability. Priority mail earns 250 percent of the normal rate
+  (`class_revenue_percent[1]=250` on `name=Post` in `New/goods/goods-128.dat`).
+  `[CODE New master @ 7a0a145e1]`
+
+## Economic calibration
+
+- Fare base: the low-class second fare stage of 0.50 cents per kilometre represents 1d per
+  mile, the third-class maximum of the Regulation of the Railways Act 1844, at 1900 levels.
+  `[FORUM:https://forum.simutrans.com/index.php/topic,21310.0.html]`
+- Current per-class revenue percents in `New/goods/goods-128.dat`: passengers 50, 100, 150,
+  200 and 300 across the five classes; mail 100 and 250 across the two classes.
+  `[CODE New master @ 7a0a145e1]`
+- Proposed 1900 revision: actual average third-class fares around 1900 were about 0.55d per
+  mile rather than the nominal 1d, with workmen's fares lower still at about half the
+  ordinary rate. The proposal halves average fares, sets very low fares at half of low fares
+  with steeper gradients to high fares at twice low fares, restores the 1840s 1d, 2d and 3d
+  gradient through the low, high and very high classes once inflation is simulated, removes
+  the 16 km first-stage differential not used for UK passengers, and retains very-long-journey discounts aimed at sea and air travel. `[FORUM:https://forum.simutrans.com/index.php/topic,21310.msg198283.html#msg198283]`
+- Accommodation build costs by class: an 1844 LBSCR first-class carriage cost 319 pounds 10
+  shillings against 231/10 for second class and 160 pounds for third; by 1866 first class
+  cost 283 to 315 pounds, second 277/10 and third 269, showing convergence.
+  `[FORUM:https://forum.simutrans.com/index.php/topic,6521.msg82605.html#msg82605]`
 
 ## Accommodation
 
@@ -62,6 +96,15 @@ catering and travelling post offices modify revenue.
 - Travelling post offices earn `tpo_revenue = 300` per mail bag carried on trips above
   `tpo_min_minutes = 90`. `[CODE New master @ eff439751]`
 
+## Fare stages
+
+- Distance-staged revenue and per-class revenue percents are recorded per good in
+  `New/goods/goods-128.dat` (`value[i]` with `to_distance[i]`, `class_revenue_percent[i]`);
+  see [goods](objects/good.md). `[CODE New master @ 7a0a145e1]`
+- The staged values match the proposed 1900-calibrated fares from the cost balancing project.
+  `[RECOLLECTION:2026-09-19]`
+
 ## Open questions
 
-- Which fare-stage figures currently apply per class, and where are they recorded?
+- What historical basis sets the mail class revenue percents (100 and 250)? No dedicated
+  postage calibration source has been located.
