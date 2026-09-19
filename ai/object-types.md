@@ -25,7 +25,7 @@ lost. Read the child doc for the type a task touches.
 - [tree](objects/tree.md) — read when touching `Obj=tree`.
 - [citycar](objects/citycar.md) — read when touching private cars (`Obj=citycar`).
 - [pedestrian](objects/pedestrian.md) — read when touching `Obj=pedestrian`.
-- [factory](objects/factory.md) — read when touching industries (`Obj=factory`).
+- [factory](objects/factory.md) — read when touching industries (`Obj=factory`). Keys the [factory fields](objects/factory-fields.md) child doc.
 - [pier](objects/pier.md) — read when touching `Obj=pier`.
 - [ground](objects/ground.md) — read when touching ground and water textures (`Obj=ground`).
 - [fences](objects/fences.md) — read when touching fences.

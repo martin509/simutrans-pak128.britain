@@ -51,6 +51,10 @@ care is taken to preserve all necessary data.
 - Never mention a data parameter in passing: every parameter named in a doc is either
   explained in full there or given a brief inline summary with a link to the doc that
   explains it.
+- In any doc that specifies `.dat` (or `.tab`) fields, state for each field what happens if
+  it is omitted, including the hard-coded default and any consequence (fatal error, sentinel,
+  empty list, inherited value). If the default has not been researched, say so rather than
+  omitting the matter.
 
 ## Adding assets and features
 

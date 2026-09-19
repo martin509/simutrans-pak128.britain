@@ -1,26 +1,26 @@
 ---
-status: stub
-verified: none
+status: draft
+verified: New master @ 96a2c9593
 ---
 # Industry (`factory`)
 
 **Covers**: `Obj=factory` objects; industries, and the goods they produce and consume.
 
-## Initial facts
+## Overview
 
-- Source folder: `New/industry/`. Each factory names its goods, dates, level, and
-  staffing capacity; field meanings are a planned section below.
-  `[CODE New master @ e36ec2321]`
+- Source folder: `New/industry/`. Each factory combines a factory node with an embedded
+  building node, so both factory fields and building fields apply.
+  `[CODE New master @ f8859c42d]`
+- A factory declares the goods it consumes (`inputgood`) and produces (`outputgood`) with
+  factors and capacities, its `productivity`, its `location` siting rule, optional
+  `fields` for raw-material areas, and staff and visitor demand. Full field-by-field
+  explanation: [factory-fields](factory-fields.md).
 - Industrial buildings can also be `Obj=building` with `type=ind`; these are distinct from
   factories. See [city-buildings](buildings/city-buildings.md).
   `[CODE New master @ e36ec2321]`
 - Goods definitions are a separate object type; see [good](good.md).
-
-## Planned sections
-
-- Factory fields and their meaning.
-- Goods chains, production, consumption, and capacities.
-- Era coverage and historical realism of industry introduction and retirement.
+- For how production is calibrated against the time system and town size, see
+  [balancing](../balancing.md).
 
 ## Open questions
 

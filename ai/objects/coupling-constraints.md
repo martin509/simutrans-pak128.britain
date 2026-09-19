@@ -20,8 +20,7 @@ flags. Keyed from [vehicle](vehicle.md).
 - `any` as the single entry means that end is free, and must not be combined with other
   entries. `[CODE simutrans-extended master @ 7655609]`
 - With no entries at all, the end is likewise free, with placement flags derived from cabs,
-  power and direction flags as described below.
-  `[CODE simutrans-extended master @ 7655609]`
+  power and direction flags as described below. `[CODE simutrans-extended master @ d09e920]`
 
 ## Placement flags
 

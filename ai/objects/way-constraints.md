@@ -16,7 +16,10 @@ system and the exact meaning of each constraint index in this pakset. Keyed from
   must have it; if the way demands it, the vehicle must have it.
   `[CODE simutrans-extended master @ 7655609]`
 - An empty mask always matches, so unconstrained vehicles run on unconstrained ways and
-  neither side restricts the other. `[CODE simutrans-extended master @ 7655609]`
+  neither side restricts the other. If the `way_constraint_permissive` or
+  `way_constraint_prohibitive` keys are omitted entirely, makeobj uses an out-of-range
+  sentinel and sets no bits, giving the empty mask; see
+  [vehicle-fields](vehicle-fields.md). `[CODE simutrans-extended master @ d09e920]`
 
 ## Track electrification (permissive)
 

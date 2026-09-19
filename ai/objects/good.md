@@ -14,6 +14,12 @@ verified: New master @ 7a0a145e1
   `cars`, `paletten`), `catg` (category), `number_of_classes`, distance-staged revenue
   `value[i]` with `to_distance[i]`, per-class revenue `class_revenue_percent[i]`,
   `speed_bonus`, and `weight_per_unit` in kilogrammes. `[CODE New master @ 7a0a145e1]`
+- Omission defaults: `catg` is 0, `number_of_classes` is 1, `speed_bonus` is 0,
+  `weight_per_unit` is 100, `mapcolor` is 255, each `class_revenue_percent[i]` is 100, and
+  the unindexed `value` is 0. The staged `value[i]` list is terminated by the first missing
+  index; an omitted `to_distance[i]` repeats the previous value (0 for the first). `name` is
+  the registry key and is required in practice.
+  `[CODE simutrans-extended master @ d09e920]`
 - Example, passengers (`name=Passagiere`): `number_of_classes=5`; staged values 55 to 16 km,
   50 to 500, 45 to 2500, 40 to 5000, 35 beyond; class revenue percents 50, 100, 150, 200 and
   300 across the five classes; `weight_per_unit=70`. `[CODE New master @ 7a0a145e1]`
