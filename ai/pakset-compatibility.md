@@ -1,6 +1,6 @@
 ---
-status: stub
-verified: none
+status: draft
+verified: New master @ 4fffcc19e
 ---
 # Pakset compatibility
 
@@ -14,6 +14,23 @@ compatibility, and the restrictions on changing them.
   reading the relevant docs and presenting the intended change to the user.
 - The engine is the authority on which fields are save-relevant; this project must determine
   that from the engine source rather than assume it. `[UNVERIFIED]`
+
+## Rename and replacement mechanism (`compat.tab`)
+
+- `New/compat.tab` lists obsolete object names and their replacements. The file header states
+  that an obsolete object is replaced by the object named in the next line. Each entry is an
+  ordered pair: one obsolete `name=` value, followed by its replacement `name=` value.
+  `[CODE New master @ 4fffcc19e]`
+- Object identity uses the lowercase `name=` field in each `.dat` file. Example:
+  `New/trains/4wheel-1850s-brake.dat` declares `name=4-wheel-1850s-brake`.
+  `[CODE New master @ 4fffcc19e]`
+- `compat.tab` is copied to the pakset root and used directly, not compiled; build handling is
+  recorded in [build-and-toolchain](build-and-toolchain.md). `[CODE New master @ 4fffcc19e]`
+- Procedure: when renaming, retiring, or replacing an object, append the obsolete `name=` value
+  followed by the replacement `name=` value. `[CODE New master @ 4fffcc19e]`
+- Scope limit: `compat.tab` contains name pairs only. It contains no capacity, constraint, price,
+  or intro/retire date logic; value changes are outside its scope.
+  `[CODE New master @ 4fffcc19e]`
 
 ## Planned sections
 
