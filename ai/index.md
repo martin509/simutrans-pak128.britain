@@ -34,6 +34,7 @@ do not use line-number references to files that change. Never edit a document's 
 - [high-level-design-goals](high-level-design-goals.md) — read before any design or balancing work: the amended design goals that govern pakset assets and data.
 - [pakset-roadmap](pakset-roadmap.md) — read when planning what assets or features to add in what order; registry of planned work. Check after completing work to close its entry.
 - [balancing](balancing.md) — read when tuning prices, costs, capacities, speeds, or intro/retire dates, or when judging economic and historical realism.
+- [class](class.md) — read when touching passenger or mail classes, accommodation, comfort, catering, or fare-dependent revenue; keyed from [balancing](balancing.md).
 
 ## Build, data & infrastructure
 
