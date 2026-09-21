@@ -40,6 +40,20 @@ The general rule is a hard-coded default in makeobj: absent keys are read as emp
 - `fixed_cost` is the monthly cost. `fixed_maintenance` is the original Extended name and is
   still read; if both are omitted the value is 0.
   `[CODE simutrans-extended master @ d09e920]`
+- `battery_round_trip_efficiency` is the battery round-trip efficiency as an integer
+  percentage (85 = 85 percent), used only by `engine_type=battery` vehicles. Battery
+  traction has no entry of its own in `config/fuel.tab` (see [balancing](../balancing.md)):
+  the engine prices its energy from the electricity entry (`fuel[electric]`) of that file
+  divided by this efficiency, because electricity is bought from the grid and a proportion
+  of it is lost in charging and discharging the battery. If omitted it is 85, the average
+  of 2020s-dated values: 85 percent (NREL Annual Technology Baseline 2023 and 2024
+  utility-scale battery storage assumptions, from Cole & Karmakar 2023); 84 percent
+  (computed from EIA 2022 United States utility-scale battery fleet data: gross generation
+  2,913,805 MWh against 539,294 MWh of charging electricity and own loads, published 2023);
+  86 percent (measured round-trip efficiency of a 3.0Ah NMC 18650 cell at a 0.2C charge
+  rate; Bobanac, Basic & Pandzic, IEEE EUROCON 2021); (85 + 85 + 84 + 86) / 4 = 85. A value
+  of 0 falls back to the unscaled electricity cost.
+  `[CODE simutrans-extended ex-15, uncommitted working tree @ 2026-09-20]`
 - For how these values are calibrated, see [balancing](../balancing.md).
 
 ## Physics and running
