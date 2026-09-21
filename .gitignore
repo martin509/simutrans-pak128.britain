@@ -3,6 +3,7 @@
 *.zip
 *.vcxproj.*
 *.XML
+.vs/
 _UpgradeReport_Files*
 *.old
 *.sdf
