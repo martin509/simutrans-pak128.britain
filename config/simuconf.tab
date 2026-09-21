@@ -880,6 +880,33 @@ power_revenue_factor_percentage = 100
 # Preserves accuracy without requiring very high absolute figures (only rounds down at the end of each trip).
 fuel_unit_cost_divider = 1000
 
+# Round-trip efficiencies used to derive the electricity-based running cost of battery
+# and fuel-cell traction. These two traction types have no fuel cost of their own: their
+# energy is bought as electricity (the fuel[electric] entries in config/fuel.tab), and a
+# proportion is lost in the round trip, so the delivered unit cost is the electricity
+# price divided by the efficiency below.
+#
+# Precedence for the efficiency (highest first):
+#   1. a per-vehicle value in the vehicle .dat file (battery_round_trip_efficiency /
+#      fuel_cell_round_trip_efficiency; 0 = not set);
+#   2. the global value here;
+#   3. if this is also omitted, a hard-coded in-code default (battery 85%, fuel cell 40%).
+# If a fuel[...] entry is supplied in fuel.tab for battery or fuel cell, it is used
+# directly instead of the electricity derivation.
+#
+# battery_round_trip_efficiency: the proportion of grid electricity delivered to the
+#   drive after charging and discharging the battery, as an integer percentage
+#   (85 = 85%). The default of 85% is the average of 2020s measured and aggregate
+#   utility-scale battery storage round-trip efficiencies.
+battery_round_trip_efficiency = 85
+
+#
+# fuel_cell_round_trip_efficiency: the proportion of grid electricity delivered to the
+#   drive after converting it to hydrogen by electrolysis and back to electricity by the
+#   fuel cell, as an integer percentage (40 = 40%). The default of 40% approximates a
+#   ~70% electrolysis efficiency multiplied by a ~55% fuel-cell efficiency.
+fuel_cell_round_trip_efficiency = 40
+
 # Sanity check: overrides to deal with problem settings in individual factory buildings in paks which round down too low.
 # Minimum storage size for industries should be set at the size of a small vehicle which is expected to
 # be usable economically during the game.  This is always at least 1, but usually more like 5 or 7.
