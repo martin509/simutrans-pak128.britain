@@ -838,14 +838,15 @@ parallel_ways_forge_cost_percentage_tram = 85
 parallel_ways_forge_cost_percentage_narrowgauge = 35
 parallel_ways_forge_cost_percentage_air = 85
 
-# Insolvency and debt settings
+# This gives the number of percentage points above the base rate at which players are charged interest on overdrafts.
+# Default: 2%
+# The base rate is set in prices.tab.
+overdraft_percent_above_base_rate = 3
+
+# Insolvency settings
 #
 # These settings allow what happens when the player runs out of money and goes
 # into the red to be customised. 
-#
-# "interest_rate_percent" is the annual interest rate (charged monthly) on all
-# overdraft debt (i.e., on all negative account balances). It can be between 0
-# and 255. 
 # 
 # "allow_bankruptcy" determines whether, when the player is deemed to have been
 # insolvent for more than a certain period, the player should be declared
@@ -860,7 +861,6 @@ parallel_ways_forge_cost_percentage_air = 85
 # To revert to the behaviour of Simutrans standard, set interest_rate_percent to
 # 0, set allow_bankruptsy to 1, and set allow_purchases_when_insolvent to 1.
 
-interest_rate_percent = 10
 allow_bankruptcy = 1
 allow_purchases_when_insolvent = 0	
 
@@ -876,11 +876,43 @@ cst_make_public_months = 60
 # The figure is a percentage of the default revenue. Default: 100.
 power_revenue_factor_percentage = 100
 
+# Allows fuel units to be set in, for example, grammes whilst fuel costs are calibrated for, for example, tonnes.
+# Preserves accuracy without requiring very high absolute figures (only rounds down at the end of each trip).
+fuel_unit_cost_divider = 1000
+
+# Round-trip efficiencies used to derive the electricity-based running cost of battery
+# and fuel-cell traction. These two traction types have no fuel cost of their own: their
+# energy is bought as electricity (the fuel[electric] entries in config/fuel.tab), and a
+# proportion is lost in the round trip, so the delivered unit cost is the electricity
+# price divided by the efficiency below.
+#
+# Precedence for the efficiency (highest first):
+#   1. a per-vehicle value in the vehicle .dat file (battery_round_trip_efficiency /
+#      fuel_cell_round_trip_efficiency; 0 = not set);
+#   2. the global value here;
+#   3. if this is also omitted, a hard-coded in-code default (battery 85%, fuel cell 40%).
+# If a fuel[...] entry is supplied in fuel.tab for battery or fuel cell, it is used
+# directly instead of the electricity derivation.
+#
+# battery_round_trip_efficiency: the proportion of grid electricity delivered to the
+#   drive after charging and discharging the battery, as an integer percentage
+#   (85 = 85%). The default of 85% is the average of 2020s measured and aggregate
+#   utility-scale battery storage round-trip efficiencies.
+battery_round_trip_efficiency = 85
+
+#
+# fuel_cell_round_trip_efficiency: the proportion of grid electricity delivered to the
+#   drive after converting it to hydrogen by electrolysis and back to electricity by the
+#   fuel cell, as an integer percentage (40 = 40%). The default of 40% approximates a
+#   ~70% electrolysis efficiency multiplied by a ~55% fuel-cell efficiency.
+fuel_cell_round_trip_efficiency = 40
+
 # Sanity check: overrides to deal with problem settings in individual factory buildings in paks which round down too low.
 # Minimum storage size for industries should be set at the size of a small vehicle which is expected to
 # be usable economically during the game.  This is always at least 1, but usually more like 5 or 7.
 minimum_industry_input_storage_raw = 1
 minimum_industry_output_storage_raw = 1
+
 
 
 ################################### Time settings ################################
@@ -1109,6 +1141,9 @@ unit_reverse_time_seconds=60
 hauled_reverse_time_seconds=120
 turntable_reverse_time_seconds=360
 
+# The length of time in seconds that it takes a consist to be shunted into a new consist
+shunting_time_seconds = 120
+
 # This setting allows the power of all vehicles to be adjusted at once. It is a
 # percentage figure. Thus, if, for example, a vehicle has a power rating of 1,200kw
 # and the global_power_factor_percent is set to 200, it will behave in game as if
@@ -1130,7 +1165,7 @@ global_force_factor_percent=100
 # 0: weight limits are ignored entirely. 
 # 1: then vehicles can travel over roads, rails, tunnels and bridges for which they are too heavy, but only at greatly reduced speed. 
 # 2: Vehicles cannot travel over ways for which they are overweight at all. 
-# 3: Vehciles cannot travel over ways for which they are more than 10% overweight at all, and will travel on ways for which they are up to 10% overweight at a greatly reduced speed.
+# 3: Vehicles cannot travel over ways for which they are more than 10% overweight at all, and will travel on ways for which they are up to 10% overweight at a greatly reduced speed.
 #
 # To revert to the behaviour of Simutrans-Standard, set enforce_weight_limits=0
 
@@ -1185,6 +1220,28 @@ max_speed_drive_by_sight_tram_kmh = 50
 # so set this as a minimum to allow for this. 
 #
 assumed_curve_radius_45_degrees = 750
+
+# These settings govern the frequency with which vehicles that do not have a distance based
+# maintenance interval set in their individual .dat files must return to the depot for maintenance.
+# After maintenance_interval_months, the vehicle will return to the depot on its next scheduled
+# depot visit. After extended_maintenance_interval_months, the vehicle will return to the depot
+# after its next stop irrespective of its schedule.
+maintenance_interval_months = 12
+extended_maintenance_interval_months = 18
+
+# This determines whether vehicles need to visit depots periodically.
+# If enabled (1), the vehicles do not need to visit depots periodically.
+# 
+# This is enabled by default when loading older saved games in which
+# periodic depot vists were neither necessary nor possible, irrespective
+# of the setting here. This applies only to new games.
+#
+# Default: 0 (except for loading games saved in versions older than 15)
+simplified_maintenance = 0
+
+# The number of seconds (in game time) that is the minimum amount of time that a consist
+# can be in the layover state.
+min_layover_overhead_seconds = 120
 
 ############################### Display settings ###############################
 
