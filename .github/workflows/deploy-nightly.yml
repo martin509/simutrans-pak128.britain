@@ -84,7 +84,7 @@ jobs:
   build:
     needs: check_updates
     if: needs.check_updates.outputs.outdated == 'true'
-    uses: jamespetts/simutrans-pak128.britain/.github/workflows/build.yml@master
+    uses: martin509/simutrans-pak128.britain/.github/workflows/build.yml@master
     with:
       pakset_ref: ${{ github.sha }}
       simutrans_repository: ${{ needs.check_updates.outputs.simutrans_repository }}
