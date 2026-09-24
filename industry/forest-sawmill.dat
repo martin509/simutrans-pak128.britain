@@ -249,7 +249,7 @@ OutputGood[0]=Bretter
 OutputCapacity[0]=640 
 OutputFactor[0]=50  
 OutputGood[1]=woodchip
-OutputCapacity[1]=40
+OutputCapacity[1]=80
 OutputFactor[1]=50 
 field_output_divider=200
 Dims=2,2,4
@@ -295,9 +295,9 @@ fields[3]=ForestTrees-3
 probability_to_spawn=20
 # Assume productivity class of 12
 production_per_field[0]=27
-max_fields=207
-min_fields=51
-start_fields=64
+max_fields=249
+min_fields=61
+start_fields=72
 has_snow[0]=1
 upgrade[0]=ForestSawmill1950
 upgrade[1]=ForestSawmill1970
@@ -386,8 +386,9 @@ fields[3]=ForestTrees-3
 probability_to_spawn=20
 # Assume productivity class 15
 production_per_field[0]=34
-max_fields=220
-min_fields=55
+max_fields=310
+min_fields=76
+start_fields=96
 has_snow[0]=1
 upgrade[0]=ForestSawmill1970
 --------------------
@@ -476,8 +477,8 @@ fields[2]=ForestTrees-2
 fields[3]=ForestTrees-3
 probability_to_spawn=20
 production_per_field[0]=45
-max_fields=32
-min_fields=81
-start_fields=64
+max_fields=620
+min_fields=152
+start_fields=192
 has_snow[0]=1
 --

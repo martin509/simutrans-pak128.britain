@@ -36,9 +36,9 @@ electricity_amount=0
 electricity_boost=0
 MapColor=136
 OutputGood[0]=vegetables
-OutputCapacity[0]=35 
-OutputFactor[0]=8
-field_output_divider=50
+OutputCapacity[0]=60 
+OutputFactor[0]=40
+field_output_divider=42
 dims=1,2,4
 BackImage[0][0][0][0][0][0]=arable-farm-house.0.0
 BackImage[0][1][0][0][0][0]=arable-farm-house.0.1
@@ -59,9 +59,9 @@ BackImage[3][0][1][0][0][1]=arable-farm-house.3.3
 fields[0]=VegetableField
 probability_to_spawn=25
 production_per_field[0]=1
-max_fields=1036
-min_fields=195
-start_fields=365
+max_fields=518
+min_fields=97
+start_fields=182
 has_snow[0]=1
 spawn_weight[0]=100
 upgrade[0]=ArableFarm1840
@@ -108,9 +108,9 @@ electricity_amount=1
 electricity_boost=500
 MapColor=136
 OutputGood[0]=vegetables
-OutputCapacity[0]=30
-OutputFactor[0]=9
-field_output_divider=50  
+OutputCapacity[0]=120
+OutputFactor[0]=40
+field_output_divider=42  
 dims=1,2,4
 BackImage[0][0][0][0][0][0]=arable-farm-house.0.0
 BackImage[0][1][0][0][0][0]=arable-farm-house.0.1
@@ -131,13 +131,14 @@ BackImage[3][0][1][0][0][1]=arable-farm-house.3.3
 fields[0]=VegetableField
 probability_to_spawn=30
 production_per_field[0]=1
-max_fields=1942
-min_fields=365
-start_fields=389
+max_fields=971
+min_fields=182
+start_fields=194
 has_snow[0]=1
 upgrade[0]=ArableFarm1910
 upgrade[1]=ArableFarm1945
 -------------------------------
+# from 1865 to 1912, UK potato yields increase from 10.09 t/ha to 15.80 t/ha
 Obj=factory
 name=ArableFarm1910
 intro_year=1910
@@ -171,9 +172,9 @@ electricity_amount=1
 electricity_boost=750
 MapColor=136
 OutputGood[0]=vegetables
-OutputCapacity[0]=60
-OutputFactor[0]=21
-field_output_divider=50
+OutputCapacity[0]=180
+OutputFactor[0]=62
+field_output_divider=42
 dims=1,2,4
 
 BackImage[0][0][0][0][0][0]=arable-farm-house.0.0
@@ -195,12 +196,15 @@ BackImage[3][0][1][0][0][1]=arable-farm-house.3.3
 fields[0]=VegetableField
 probability_to_spawn=30
 production_per_field[0]=1
-max_fields=2072
-min_fields=389
+max_fields=1456
+min_fields=273
+start_fields=291
 has_snow[0]=1
 upgrade[0]=ArableFarm1945
 upgrade[1]=ArableFarm1975
 --------------------
+# Going off yields for potatoes in the UK as a proxy for vegetable farm yields, from 1912 to 1944 yields go from 15.8 t/hectare to 17.8
+
 Obj=factory
 name=ArableFarm1945
 intro_year=1945
@@ -233,9 +237,9 @@ electricity_amount=2
 electricity_boost=1000
 MapColor=136
 OutputGood[0]=vegetables
-OutputCapacity[0]=90
-OutputFactor[0]=18
-field_output_divider=50
+OutputCapacity[0]=240
+OutputFactor[0]=70
+field_output_divider=42
  
 dims=1,2,4
 BackImage[0][0][0][0][0][0]=arable-farm-house.0.0
@@ -263,6 +267,10 @@ start_fields=612
 has_snow[0]=1
 upgrade[0]=ArableFarm1975
 --------------------
+# From 1944 to 1974, potato yields go from 17.8 t/ha to 31.67 t/ha
+# https://ourworldindata.org/explorers/crop-yields?tab=chart&facet=none&country=IND~USA~ITA~GBR~NGA~LKA~BRA~PER~AGO&hideControls=false&Crop=Wheat&Metric=Actual+yield
+# This works out to 49.48 t/tile / (365 days/year * 24 active hours/day) * 6.4 hours/month / 700kg per crate -> 0.0516 crates/tile or 52 crates/farm
+# Which gets scaled accordingly off of the time series above for previous years
 Obj=factory
 name=ArableFarm1975
 intro_year=1975
@@ -293,9 +301,9 @@ electricity_amount=3
 electricity_boost=1250
 MapColor=136
 OutputGood[0]=vegetables
-OutputCapacity[0]=135
+OutputCapacity[0]=620
 OutputFactor[0]=125
-field_output_divider=50
+field_output_divider=42
 
 dims=1,2,4
 BackImage[0][0][0][0][0][0]=arable-farm-house.0.0

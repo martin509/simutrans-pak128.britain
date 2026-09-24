@@ -24,9 +24,9 @@ class_proportion_jobs[3]=3
 class_proportion_jobs[4]=2
 level=1
 Location=City
-distributionweight=12
-Productivity=1
-Range=1
+distributionweight=3
+Productivity=6
+Range=4
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -70,9 +70,9 @@ class_proportion_jobs[2]=40
 class_proportion_jobs[3]=3
 class_proportion_jobs[4]=2
 Location=City
-distributionweight=15
-Productivity=1
-Range=2
+distributionweight=5
+Productivity=8
+Range=6
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -112,7 +112,7 @@ copyright=James
 intro_year=1948
 intro_month=12
 retire_year=1970
-retire_month=1
+retire_month=8
 population_and_visitor_demand_capacity=120
 employment_capacity=36
 mail_demand=15
@@ -129,8 +129,8 @@ class_proportion_jobs[4]=5
 level=1
 Location=City
 distributionweight=6
-Productivity=4
-Range=8
+Productivity=12
+Range=9
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
@@ -163,13 +163,26 @@ BackImage[3][1][0][0][0][1]=car-dealership.3.3
 upgrade[0]=CarDealership1970
 
 --------------------
+# Average IRL car dealership sq. footage = 21,000 = 1950 m^2
+# Each ingame dealership is 1x2 -> 125*250 = 31250 m^2 / 1950 = 16x multiplier
+# Let's say each dealership sells 100 cars/month on the high end -> 1200 cars/year
+# 1200/365.24/8 = 0.41 cars/hour * 6.4 = 2.628 cars/month * 16 = 42 cars/month
+# For previous years, we will use distributionweight instead of productivity to scale overall auto consumption,
+# since the rate a car dealership sells cars remains relatively static.
+# Productivity per dealership will be scaled off employment capacity.
+
+# For scaling historically: the UK new car market consisted of 1.1 million units in 1965 (source: https://bestsellingcarsblog.com/2012/10/uk-1965-2011-more-detailed-data-now-available/)
+# In 2000, this was 2.21M units (https://www.statista.com/statistics/901089/uk-new-car-registrations-by-sales-type/)
+# Per capita, this was 0.0202/person in 1965, and 0.0374/person in 2000
+# Therefore there's a ~50% increase from CarDealership1950 to 1970 in dist. weight
+
 Obj=factory
 name=CarDealership1970
 copyright=James
 intro_year=1970
 intro_month=8
-retire_year=1995
-retire_month=3
+#retire_year=1995
+#retire_month=3
 population_and_visitor_demand_capacity=240
 employment_capacity=50
 mail_demand=18
@@ -185,9 +198,9 @@ class_proportion_jobs[3]=0
 class_proportion_jobs[4]=5
 level=1
 Location=City
-distributionweight=6
-Productivity=8
-Range=16
+distributionweight=9
+Productivity=16
+Range=12
 passenger_boost=800
 mail_boost=200
 electricity_amount=1
