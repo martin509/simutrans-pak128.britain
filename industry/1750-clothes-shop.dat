@@ -1,3 +1,83 @@
+# (WIP) Clothing consumption calculations/sources
+# 
+# [1] https://publications.gc.ca/collections/collection_2018/statcan/34-216/CS34-216-1960-eng.pdf
+# [2] https://publications.gc.ca/collections/collection_2018/statcan/34-217/CS34-217-1960-eng.pdf
+# Canadian detailed statistics on garment industry, 1960 (men's and women's clothing, separately)
+# [3] https://publications.gc.ca/collections/collection_2019/isde-ised/id46/Id46-2-1980-1-eng.pdf
+# Canadian gov't inquiry on garment industry, 1980
+# These sources are very useful as they give data on both dollar value of garments sold in Canada as well as, in the case of the 1980 report, piece counts.
+# Historical data in the 1960 report goes back to 1929 which is the earliest the Canadian govt appears to have collected this information.
+# 
+# [4] https://transportgeography.org/contents/chapter5/intermodal-transportation-containerization/container-shipping-costs-value/
+# Actual textbook, not AI slop, giving piece counts and dollar values of a 40' shipping container full of clothes.
+# This allows us to convert piece count into approximate mass, and since we can convert dollars into piece count,
+# we can therefore directly convert historical economic data on garment purchases in dollars into "how many crates of textiles does this mean".
+# 
+# [5] https://www.statista.com/statistics/294277/clothing-number-of-retail-stores-in-the-united-kingdom-uk/
+# Source for figure of 11,500 clothing stores in the UK today 
+# 
+# Assumptions (getting figures that roughly fit in an order of magnitude of Simutrans scale is very difficult otherwise)
+# 1. Using figures for Canada will be roughly comparable to British figures, at least in the 20th century
+# 2. A 40' container of clothes has a ~20,000kg payload
+# 3. Of a 440kg crate of textiles let's say 90% is actual textiles (400kg payload per crate)
+# 4. A 40' crate has anywhere from 25-130k units of clothes in it, so let's say 75k
+# 5. For department stores, assume 50% floor space is for clothing and that they have two floors, so the 1x3 footprint is effectively 2x3 * 50% = 1x3 = 3 tiles of clothing store
+# 6. Over time there is a similar ratio of clothing stores to population as today
+# 7. A typical clothing store is around ~2000 square feet or 180 square meters
+# 8. GIGANTIC ASSUMPTION: the price of an article of clothing is relatively static, adjusted for inflation, over the course of the 20th century
+# 
+# This math also applies to department stores. Each department store counts as effectively 3 clothing stores (see assumption 5),
+# so depending on distribution_weight of department stores clothing stores will have their consumption reduced to (department store distribution_weight)/(department store distribution_weight + 3)
+# e.g. if distribution weight of a department store is 7, then clothing stores have their consumption reduced to 7/10 of what it would be ordinarily.
+# 
+# WIP MATH TO TIDY UP LATER:
+# - 24,201,544 population canada
+# - 56,284,863 population uk
+# - 11500 clothing shops today in UK * 56284863 / 70mn = 9246 shops
+#
+# Apparent CA market for clothing, 1979: 535.7m "units"
+# - a 40ft container has anywhere from 25k to 130k units in it -> assume 75k units
+# - 20000kg / 75k units = 0.26kg per unit
+# - 0.26kg * 535.7 = 142.85 mn kg
+# - correct to UK population: 332 mn kg
+# 332 mn kg / 9246 shops = 35,932 kg/shop/year
+# * 86 shops per tile / 365 / 8 * 6.4 = 6772 kg/simutrans shop/simutrans month
+# = **16.9 crates per simutrans month in a UK shop in 1980!!**
+# What about back in time?
+#
+# 1979 est. wholesale price: $9.31 domestic, $8.46 import
+#- $9.31 * 368.2mn net domestic + $8.46 * 167.5 import = $4,844,992,000 market
+# INFLATION FROM 1960 TO 1979: 2.57x
+# 1960 market size: 
+# - men's domestic: $261,278,917 1960 dollars
+#	- exports: $2,672,023 -> net $258,606,894
+# - men's imports: $32,476,314 -> TOTAL MEN'S $291,083,208
+# - women's domestic: $342,360,243
+#	- exports: $3,298,630 -> net $339,061,613
+# - women's imports: $79,351,776 -> TOTAL WOMEN'S $418,413,389
+# TOTAL 1960 MARKET: $709,496,597 * 2.57 = $1,823,406,254 in 1979 dollars
+# THEREFORE from 1960 to 1980 the market increased in size by 
+# 4,884,992,000 / 1,823,406,254 = 2.67x
+# Canadian population went from 17,898,000 to 24,201,000 -> 1.35x
+# Approx. increase: 1.97x relative to population
+# - MEANING: 1960 clothing shop is 8.5 crates.
+# but wait.. department stores exist..
+# you have DepartmentStore1960 and DepartmentStore1990.. and DepartmentStore1935..
+# There are 7x clothingstore1945 for every deptstore1960
+# - Let's say a dept. store covers 3x as many sales as a clothing store
+# - That means clothing shop * 0.7 = 5.95 crates/mo and dept store = 17.85 crates
+# By DeptStore1990.. let's say we also have a ClothingShop1980..
+# Dist. weight of 5, so 5x clothingstore1980 for every deptstore1960..
+# - 16.9 * 5/6 = 14.1 crates/mo clothingstore1980
+# - 14.1 * 3 = 42 crates/mo deptstore1990
+#	
+# RESULTS SO FAR ON CLOTHING CONSUMPTION:
+# For later-year clothing stores: 14.1 crates per month (TODO: Add ClothesShop1980 for this)
+# For later-year department stores, 42 crates/month
+# For ClothesShop1945, 6 crates/month
+# For department stores in 1960, 17.9 crates/month
+# Unknown for ClothesShop1910 or earlier.
+
 Obj=factory
 name=ClothesShop1750
 intro_year=1750
@@ -102,7 +182,7 @@ name=ClothesShop1910
 intro_year=1910
 intro_month=12
 retire_year=1945
-retire_month=10
+retire_month=12
 copyright=James
 level=5
 population_and_visitor_demand_capacity=375
@@ -149,7 +229,7 @@ upgrade[0]=ClothesShop1945
 Obj=factory
 name=ClothesShop1945
 intro_year=1945
-intro_month=12
+intro_month=10
 copyright=Kieron & WLindley
 level=5
 population_and_visitor_demand_capacity=750
