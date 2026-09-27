@@ -1,0 +1,92 @@
+obj=vehicle
+name=ger-s69
+engine_type=steam
+smoke=Steam
+# Driver-proportioned from the sibling Claud (145 km/h at 84in drivers);
+# class precedent (N15/T14) suggests up to 140: see open questions.
+speed=135
+# Extrapolated (steam-physics-calcs.ods: grate 26.5, heating 1919,
+# firing rate 31.5, 180psi Schmidt superheater, efficiency 5.90%)
+power=400
+# 21,969 lbf: 20x28in cylinders, 6ft6in drivers, 180psi
+# https://en.wikipedia.org/wiki/GER_Class_S69
+# https://www.lner.info/locos/B/b12.php
+tractive_effort=98
+copyright=James
+intro_year=1911
+intro_month=11
+retire_year=1922
+retire_month=12
+waytype=track
+freight=None
+payload=0
+length=6
+
+# 62 long tons 19.5 cwt
+# https://en.wikipedia.org/wiki/GER_Class_S69
+weight=64.0
+# 15.65t max axle load
+# https://en.wikipedia.org/wiki/GER_Class_S69
+axle_load=16
+# Weight-proportioned from GWR Saint (1910 4-6-0); see open questions.
+cost=9083381
+# Fuel-proportioned from Belpaire Claud (12.37 vs 10.81 kg/km)
+runningcost=151
+# Weight-proportioned from Belpaire Claud; see open questions.
+fixed_cost=54843
+sound=konakaboom-black-five.wav
+increase_maintenance_after_years=27
+years_before_maintenance_max_reached=25
+
+Constraint[Next][0]=GER-Claud-Hamilton-Tender
+
+liverytype[0]=GER-Ultramarine
+liverytype[1]=WW1-Austerity
+liverytype[2]=LNER-Standard
+liverytype[3]=WW2-Austerity
+liverytype[4]=BR-Early
+
+EmptyImage[E][0]=./locomotives/ger-s69_E.0.0
+EmptyImage[SE][0]=./locomotives/ger-s69_SE.0.0
+EmptyImage[S][0]=./locomotives/ger-s69_S.0.0
+EmptyImage[SW][0]=./locomotives/ger-s69_SW.0.0
+EmptyImage[W][0]=./locomotives/ger-s69_W.0.0
+EmptyImage[NW][0]=./locomotives/ger-s69_NW.0.0
+EmptyImage[N][0]=./locomotives/ger-s69_N.0.0
+EmptyImage[NE][0]=./locomotives/ger-s69_NE.0.0
+
+EmptyImage[E][1]=./locomotives/ger-s69-ww1_E.0.0
+EmptyImage[SE][1]=./locomotives/ger-s69-ww1_SE.0.0
+EmptyImage[S][1]=./locomotives/ger-s69-ww1_S.0.0
+EmptyImage[SW][1]=./locomotives/ger-s69-ww1_SW.0.0
+EmptyImage[W][1]=./locomotives/ger-s69-ww1_W.0.0
+EmptyImage[NW][1]=./locomotives/ger-s69-ww1_NW.0.0
+EmptyImage[N][1]=./locomotives/ger-s69-ww1_N.0.0
+EmptyImage[NE][1]=./locomotives/ger-s69-ww1_NE.0.0
+
+EmptyImage[E][2]=./locomotives/ger-s69-lner_E.0.0
+EmptyImage[SE][2]=./locomotives/ger-s69-lner_SE.0.0
+EmptyImage[S][2]=./locomotives/ger-s69-lner_S.0.0
+EmptyImage[SW][2]=./locomotives/ger-s69-lner_SW.0.0
+EmptyImage[W][2]=./locomotives/ger-s69-lner_W.0.0
+EmptyImage[NW][2]=./locomotives/ger-s69-lner_NW.0.0
+EmptyImage[N][2]=./locomotives/ger-s69-lner_N.0.0
+EmptyImage[NE][2]=./locomotives/ger-s69-lner_NE.0.0
+
+EmptyImage[E][3]=./locomotives/ger-s69-wartime_E.0.0
+EmptyImage[SE][3]=./locomotives/ger-s69-wartime_SE.0.0
+EmptyImage[S][3]=./locomotives/ger-s69-wartime_S.0.0
+EmptyImage[SW][3]=./locomotives/ger-s69-wartime_SW.0.0
+EmptyImage[W][3]=./locomotives/ger-s69-wartime_W.0.0
+EmptyImage[NW][3]=./locomotives/ger-s69-wartime_NW.0.0
+EmptyImage[N][3]=./locomotives/ger-s69-wartime_N.0.0
+EmptyImage[NE][3]=./locomotives/ger-s69-wartime_NE.0.0
+
+EmptyImage[E][4]=./locomotives/ger-s69-br_E.0.0
+EmptyImage[SE][4]=./locomotives/ger-s69-br_SE.0.0
+EmptyImage[S][4]=./locomotives/ger-s69-br_S.0.0
+EmptyImage[SW][4]=./locomotives/ger-s69-br_SW.0.0
+EmptyImage[W][4]=./locomotives/ger-s69-br_W.0.0
+EmptyImage[NW][4]=./locomotives/ger-s69-br_NW.0.0
+EmptyImage[N][4]=./locomotives/ger-s69-br_N.0.0
+EmptyImage[NE][4]=./locomotives/ger-s69-br_NE.0.0
