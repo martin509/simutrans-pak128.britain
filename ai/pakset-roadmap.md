@@ -25,6 +25,16 @@ for new engine features.
   graphics can be converted and maintained. This notably applies to most London Underground
   vehicles; there is no `london-underground` folder in the blend repository.
   `[RECOLLECTION:2026-09-19]` `[CODE GitBlends master @ 1c1acf58]`
+- GER S69 4-6-0 and B12/3 graphics (in progress, uncommitted at time of entry). S69: five
+  livery blends replicate the user-corrected golden `ger-s69-ww1-human-fix.blend` plus recorded
+  deltas, assertion battery passing; known remaining defects: no coupling-rod objects (a black
+  mass stands in), no tender in any engine blend, cab-side number plates deleted everywhere,
+  one `Vermillion`-lineage material (`Vermillion.008`) renders black unexplained, and model
+  absolute scale is inconsistent (~7–25% across axes). Pre-B12 backups live in the blends
+  repository at `trains/Locomotives/S69-preB12-backup/`; tier-1 references at
+  `trains/Locomotives/GER-S69/`. B12/3: the three blends carry the known-wrong v1 front board;
+  rebuild the board to the v2 profile (top 0.95 falling to 0.87, meeting the band's dipped tip
+  at 0.915) and re-import. `[RECOLLECTION:2026-09-27]`
 
 ## Open questions
 

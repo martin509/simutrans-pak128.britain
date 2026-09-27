@@ -20,6 +20,10 @@ start of most tasks.
 - The pakset has two halves kept in two repositories: the compiled sources in `New/` and the
   Blender meta-sources in `Git Blends/Pak128.Britain-blends/`. A graphics change normally starts
   in the latter and ends as `.png` files in the former.
+- Novel `.blend` creation by AI is currently unstable; minor `.blend` edits and the
+  `.blend`→`.pak` pipeline are workable; never verify anything by AI description of a render
+  or screenshot. Status and failure record: [graphics/blend-creation](graphics/blend-creation.md).
+  `[RECOLLECTION:2026-09-27]`
 
 ## Planned sections
 
