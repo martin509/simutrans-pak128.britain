@@ -1,3 +1,10 @@
+# See 1750-clothes-shop.dat for information on textiles consumption.
+# Figures from that document: 42 crates/mo of textiles for DepartmentStore1990, 17.9 for DepartmentStore1960.
+# TODO: 
+# 1. derive distribution weight over time from some kind of estimate of department stores
+# 2. derive ratios over time of the various goods
+# 3. figure out consumption for DepartmentStore1907 and DepartmentStore1935
+
 Obj=factory
 name=DepartmentStore1907
 intro_year=1890
@@ -226,8 +233,8 @@ class_proportion_jobs[4]=2
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
 distributionweight=7  
-Productivity=30 
-Range=12
+Productivity=13 
+Range=6
 passenger_boost=750
 mail_boost=500
 electricity_amount=2
@@ -243,7 +250,7 @@ InputFactor[1]=32
 #InputSupplier[1]=1
 InputGood[2]=textile
 InputCapacity[2]=300 
-InputFactor[2]=72
+InputFactor[2]=68
 #InputSupplier[2]=3
 InputGood[3]=china
 InputCapacity[3]=200 
@@ -325,8 +332,8 @@ class_proportion_jobs[4]=2
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
 distributionweight=5  
-Productivity=47 
-Range=28 
+Productivity=15 
+Range=8 
 passenger_boost=750
 mail_boost=500
 electricity_amount=2
@@ -342,7 +349,7 @@ InputFactor[1]=36
 #InputSupplier[1]=1
 InputGood[2]=textile
 InputCapacity[2]=288 
-InputFactor[2]=144  
+InputFactor[2]=140  
 #InputSupplier[2]=3
 # China no longer produced (imported, perhaps)
 #InputGood[3]=china
