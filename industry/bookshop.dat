@@ -1,3 +1,22 @@
+# Source: http://www.cambridge.org/gb/academic/subjects/history/economic-history/british-economic-growth-12701870?format=PB
+# Broadberry, Stephen, Bruce M.S. Campbell, Alexander Klein, Mark Overton and Bas van Leeuwen (2015), British Economic Growth, 1270-1870, Cambridge: Cambridge University Press
+# This gives figures for the British bookbinding industry from 1270-1870 in relative values to 1700.
+# Assuming British book consumption in much of the 19th century is ~equal to book production, this shows book consumption relatively flat 1750-1800 and then rising steeply 1800-1860.
+# We'll split this into either 1820 or before (in which case Bookshop1750 is relevant) or after 1820 (in which case Bookshop1860 is relevant)
+# Bookshop1750: Median population-adjusted relative book consumption 1750-1820, from the dataset, is ~67
+# Bookshop1860: Median pop adjusted relative consumption 1820-1870, is ~180
+# Therefore: there should be at least 2.64x as much book consumption for Bookshop1860 vs Bookshop1750.
+# This results in distribution weight for Bookshop1750 going up so that each Bookshop1750 will naturally split into ~2.25x more book consumption.
+# 
+# Next, Bookshop1920: distribution weight increasing relative to Bookshop1860 (therefore fewer bookshops) doesn't make intuitive sense, given skyrocketing literacy means there were much more books sold by that point.
+# Therefore, back propagate distribution weight for Bookshop1860 and Bookshop1750 upwards. Bookshop1860 4->8, Bookshop1750 6->14 (~2.64x less total consumption than Bookshop1860).
+#
+# TODO: 
+# Get realistic values for Bookshop1920, Bookshop1950, Bookshop1970. Currently 1970 seems a bit high in consumption for a single store (like 20+ crates) and 1950 actually decreases total consumption relative to 1920.
+# Bookshop1970 seems a bit high in consumption.
+# Bookshop1950 increases in distribution weight for no gain in productivity, implying book consumption went down drastically.
+# Finally consider adding an intermediate Bookshop1820, since it's a 110 year gap between Bookshop industries, to smooth out the 2.64x increase.
+
 Obj=factory
 name=Bookshop1750
 copyright=James
@@ -20,7 +39,7 @@ class_proportion_jobs[3]=0
 class_proportion_jobs[4]=0
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
-distributionweight=2
+distributionweight=14
 Productivity=4  
 Range=3  
 MapColor=7
@@ -65,7 +84,7 @@ class_proportion_jobs[3]=1
 class_proportion_jobs[4]=0
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
-distributionweight=4
+distributionweight=8
 Productivity=6
 electricity_amount=1
 electricity_boost=320
