@@ -2,6 +2,16 @@
 # File created with TileCutter version 0.3d.1
 # For more information see http://simutrans.entropy.me.uk/tilecutter/
 #
+# Distribution weight for PetrolStation1975:
+# StatsCan does not apply here as the UK has very different patterns of car usage from Canada so we will go off modern figures from the UK.
+# There are ~11,500 petrol stations in the UK, vs. ~23,800 supermarkets.
+# There are 25 supermarkets per Supermarket1980 building (given sizes), and 31.25 petrol stations per PetrolStation1975 building.
+# In addition there is a ratio of 14:41 Supermarket1960:Supermarket1980, where Supermarket1960 is 8.33 supermarkets
+# Meaning the average supermarket is combined (footprint * distributionweight) = 1141.66
+# 1141.66 * (11500 / 23800) = 551 combined distweight of PetrolStation1975 -> 551/31.25 = 17.65 ~ 18 distributionweight of PetrolStation1975.
+#
+# TODO: Figure out distributionweight working backwards for other PetrolStation industries.
+
 Obj=factory
 name=PetrolStation1910
 copyright=Kieron/WLindley
@@ -181,7 +191,7 @@ class_proportion_jobs[4]=0
 level=1   
 climates=rocky,tundra,temperate,desert,mediterran,arctic,tropic
 Location=City
-distributionweight=25  
+distributionweight=18  
 Productivity=32
 Range=15  
 passenger_boost=800
