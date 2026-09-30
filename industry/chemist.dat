@@ -1,3 +1,19 @@
+# Distribution weight calculations, Chemist1975
+# Source: https://publications.gc.ca/collections/Collection-R/Statcan/63-210-XIB/0009863-210-XIB.pdf
+# Statistics Canada, Retail Industry, 1998
+# This gives floor areas of various types of shop which can be used to construct relative distribution weights.
+# Reference value: ClothingShop1990 at 100 distributionweight (clothes stores are by far an extremely common retailer)
+# Total floor area of Canadian clothing stores, 1998: 2,977,703 m2
+# Total floor area of Canadian pharmacies (aka chemists), 1998: 463,960 m2
+# 463960 / 2977703 = 0.155 * 100 = ~16
+#
+# For Chemist1955, we will use c. 1978 figures as they are also what ClothesShop1960 are derived from
+# 1978 drug store floor area: 2,157,698 ft2
+# 1978 clothes store floor area: 10,188,827 ft2
+# Ratio: 2157698/10188827 = 0.211 * 40 distweight for ClothesShop1960 = 8.47 ~ 8
+#
+# TODO: Possibly slot in a Chemist1920 or so to cover the large gap between Chemist1860 and Chemist1955, and use c. 1930 Canadian numbers to estimate store count.
+
 Obj=factory
 name=Chemist1860
 copyright=James
@@ -21,9 +37,9 @@ class_proportion_jobs[4]=0
 level=15  
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
-distributionweight=18  
-Productivity=2  
-Range=1 
+distributionweight=6 
+Productivity=3  
+Range=2 
 passenger_boost=600
 mail_boost=400
 electricity_amount=1
@@ -70,8 +86,8 @@ class_proportion_jobs[4]=0
 level=18  
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
-distributionweight=21  
-Productivity=3  
+distributionweight=8  
+Productivity=4  
 Range=2  
 passenger_boost=600
 mail_boost=400
@@ -114,7 +130,7 @@ class_proportion_jobs[4]=0
 level=14  
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=City
-distributionweight=3  
+distributionweight=16 
 Productivity=5  
 Range=2  
 passenger_boost=600
