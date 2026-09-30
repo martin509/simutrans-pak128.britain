@@ -267,6 +267,10 @@ BackImage[3][1][0][0][0][1]=dairy-modern.3.3
 # The St. Albert cheese factory in Canada takes up ~12,500 m^2, and takes in 80,000L of milk per day.
 # This means a 1x2 dairy takes in 160,000L of milk every 8 hours, or (160/8*6.4)=128,000L of milk every Simutrans month.
 # This comes out to 332 churns(x5) of milk per month.
+# https://www.bongards.com/products/bongards-white-processed-american-cheese-spread-block-20/
+# Gross weight of 20lb cheddar block for shipping is 20.903lb -> assume all of that is paper -> 820kg/unit packaged food -> 0.903/20 = extra 4.5% mass of paper
+# 12 units packaged food * 820kg * 4.5% = 442.8kg of paper/month = 0.5535 crates/mo paper -> round up to 1 crate/mo
+
 Obj=factory
 name=Dairy1975
 intro_year=1975
@@ -290,8 +294,8 @@ needs_ground=1
 climates=rocky,tundra,temperate,desert,mediterran,arctic,tropic
 Location=City
 distributionweight=4
-Productivity=100
-Range=48
+Productivity=50
+Range=24
 passenger_boost=600
 mail_boost=150
 electricity_amount=5
@@ -299,12 +303,15 @@ electricity_boost=1320
 MapColor=175
 InputGood[0]=milk
 InputCapacity[0]=1500
-InputFactor[0]=100
+InputFactor[0]=200
 #InputSupplier[0]=1
+InputGood[1]=Papier
+InputCapacity[1]=10
+InputFactor[1]=1
 # When the supermarket chain is completed, diaries of this age out output packaged food (we now have supermarkets but not food packaging plants or packaged food).
 OutputGood[0]=canned_food
 OutputCapacity[0]=96
-OutputFactor[0]=6   
+OutputFactor[0]=12   
 expand_probability=9
 expand_minimum=20
 expand_range=8
