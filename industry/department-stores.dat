@@ -1,9 +1,37 @@
 # See 1750-clothes-shop.dat for information on textiles consumption.
-# Figures from that document: 42 crates/mo of textiles for DepartmentStore1990, 17.9 for DepartmentStore1960.
-# TODO: 
-# 1. derive distribution weight over time from some kind of estimate of department stores
-# 2. derive ratios over time of the various goods
-# 3. figure out consumption for DepartmentStore1907 and DepartmentStore1935
+#
+# Distribution weight calculations, courtesy of StatsCan "Retail & Department Stores" annual reports, 1933-1995
+# https://publications.gc.ca/collections/collection_2018/statcan/63-210/CS63-210-1978.pdf
+# https://publications.gc.ca/collections/Collection-R/Statcan/63-210-XIB/0009863-210-XIB.pdf
+# 1978 and 1998 are most relevant because they are the earliest and latest occurrence of statistics for floor area, which is useful for relative comparisons to other Simutrans industries.
+# 
+# DepartmentStore1990
+# Reference point: ClothesShop1990, with dist. weight of 100
+# The ingame department store building is 1x3 and depicts a multi-story building - we will assume two floors, so effectively a 2x3 footprint
+# 1998 dept store floor area accessible to public: 6,647,973 m2
+# 1998 clothing store floor area accessible to public: 2,613,087 m2
+# Ratio: 6647973 / 6 (account for in-game building) = 1107955 / 2613087 = 0.42 ratio
+# distributionweight of 42
+# Then scale productivity based on $ of sales of clothing at department stores vs. clothing stores:
+#  https://publications.gc.ca/collections/collection_2021/isde-ised/iu44/Iu44-208-1994-eng.pdf
+# StatsCan, An Overview of the Canadian Retail Clothing Market, 1994
+# As of 1993, department stores had ~25% share of the total retail clothing market.
+# At time of writing, clothesShop1990 productivity is 10 * 100 = 0.75n -> n = 1333
+# x * 42 = 0.25n -> x = 7.9 crates/mo taken up per dept. store
+#
+# DepartmentStore1960
+# Reference point: ClothesShop1960, with dist. weight of 40
+# 1978 department stores per StatsCan: 72,562,851 ft2 / 6 = 12,093,808
+# 1978 clothing stores: 10,188,821 ft2
+# Ratio is therefore: 12093808/10188821 = 1.187 * 40 = distributionweight of 47
+# Compared to 1990 this is over double market share.. 
+# If we multiply 47/40 * 42/100 (dsitributionweights in both eras) we get a 2.79x increase
+# 2.79 * 0.25 = 0.69 ~ 70% clothing market share, which.. sure
+# clothesShop1960: 8 * 40 = 0.3n -> n = 1066
+# departmentStore1960: x * 47 = 0.7n -> x = 15.88 crates/mo per DepartmentStore1960 if ClothesShop1960 is 8 crates/mo (current value, MAY NEED REVISION)
+#
+# TODO:
+# DepartmentStore1935, DepartmentStore1907
 
 Obj=factory
 name=DepartmentStore1907
@@ -130,8 +158,8 @@ class_proportion_jobs[4]=2
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
 distributionweight=4  
-Productivity=18
-Range=3 
+Productivity=10
+Range=5
 passenger_boost=750
 mail_boost=500
 electricity_amount=1
@@ -232,9 +260,9 @@ class_proportion_jobs[3]=3
 class_proportion_jobs[4]=2
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
-distributionweight=7  
-Productivity=13 
-Range=6
+distributionweight=47  
+Productivity=11 
+Range=5
 passenger_boost=750
 mail_boost=500
 electricity_amount=2
@@ -250,7 +278,7 @@ InputFactor[1]=32
 #InputSupplier[1]=1
 InputGood[2]=textile
 InputCapacity[2]=300 
-InputFactor[2]=68
+InputFactor[2]=72
 #InputSupplier[2]=3
 InputGood[3]=china
 InputCapacity[3]=200 
@@ -331,9 +359,9 @@ class_proportion_jobs[3]=8
 class_proportion_jobs[4]=2
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
-distributionweight=5  
-Productivity=15 
-Range=8 
+distributionweight=42  
+Productivity=6 
+Range=3 
 passenger_boost=750
 mail_boost=500
 electricity_amount=2
@@ -341,15 +369,15 @@ electricity_boost=1600
 MapColor=7
 InputGood[0]=Moebel
 InputCapacity[0]=216 
-InputFactor[0]=108  
+InputFactor[0]=54  
 InputSupplier[0]=1
 InputGood[1]=Bucher
 InputCapacity[1]=72
-InputFactor[1]=36 
+InputFactor[1]=18 
 #InputSupplier[1]=1
 InputGood[2]=textile
 InputCapacity[2]=288 
-InputFactor[2]=140  
+InputFactor[2]=66  
 #InputSupplier[2]=3
 # China no longer produced (imported, perhaps)
 #InputGood[3]=china
@@ -358,7 +386,7 @@ InputFactor[2]=140
 ##InputSupplier[3]=2
 InputGood[3]=hardware
 InputCapacity[3]=256 
-InputFactor[3]=128  
+InputFactor[3]=64  
 needs_ground=1
 
 dims=3,1,4
