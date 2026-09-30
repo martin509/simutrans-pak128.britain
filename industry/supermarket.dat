@@ -1,3 +1,22 @@
+# Supermarket distribution (WIP, BASED OFF CLOTHING SHOPS - ClothesShop1990 = 100 distweight)
+#
+# https://publications.gc.ca/collections/Collection-R/Statcan/63-210-XIB/0009863-210-XIB.pdf
+# https://publications.gc.ca/collections/collection_2018/statcan/63-210/CS63-210-1978.pdf
+# StatsCan reports for 1978 and 1998 giving floor areas for supermarkets ('combination grocery stores' in 1978)
+# of note: since Supermarket1960 is present in modern day, calculations take this into account
+# Comparing Canadian figures for supermarket floor area in 1998 and 1978 to clothing store floor area for the same returns:
+# Supermarket1960 = 14 (for ClothingStore1960 = 40)
+# Supermarket1980 = 40 (for ClothingStore1980 = 100)
+# for Supermarket1950, we use 'general stores' in 1978 to get average floor area of 14433 ft2 -> 1340 m2 -> 11.66 stores/tile
+# Then refer to StatsCan Retail Chain Stores, 1962, for overall store count & compare with clothing store count
+# -> 146 general stores in Canada in 1962 -> 2,107,218 ft2 total
+# Compare to clothing stores - in 1978 avg square footage of 10,188,621 for 2723 stores -> avg 3741 ft2/store
+# In 1962, 1297 stores * 3741 ft2 = 4,852,077 ft2
+# = 2107218/4852077 = 0.434 ratio of tiles in-game of Supermarket1950 to ClothesStore1945
+# ClothesStore1945 dist weight of 20 -> Supermarket1950 dist weight of 8.68 -> round to 9
+# 
+# TODO: Add calculations later showing work for Supermarket1960 + Supermarket1980
+
 Obj=factory
 Name=Supermarket1950
 # 1950 supermarket (1x1 convenience store)
@@ -18,7 +37,7 @@ intro_year=1950
 intro_month=9
 retire_year=1975
 retire_month=2
-distributionweight=2
+distributionweight=9
 Location=City
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Productivity=7
@@ -77,7 +96,7 @@ class_proportion_jobs[3]=1
 class_proportion_jobs[4]=1
 intro_year=1960
 #no retire year as this counts as a mid-sized modern supermarket too...
-distributionweight=9
+distributionweight=14
 Location=City
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Productivity=14 
@@ -154,7 +173,7 @@ Obj=factory
 Name=Supermarket1980
 # 1980 supermarket (3x4)
 intro_year=1985
-distributionweight=8 
+distributionweight=41 
 Location=City
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Productivity=42 
