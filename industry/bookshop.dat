@@ -12,6 +12,14 @@
 # Get realistic values for Bookshop1920, Bookshop1950, Bookshop1970.
 # Bookshop1970 seems a bit high in consumption.
 # Also consider adding an intermediate Bookshop1820, since it's a 110 year gap between Bookshop industries, to smooth out the overall increase.
+# 
+# Bookshop1970 distribution weight
+# Source: https://publications.gc.ca/collections/Collection-R/Statcan/63-210-XIB/0009863-210-XIB.pdf
+# StatsCan report on the retail industry, 1998
+# Reference value is ClothingShop1990 at ~100 dist. weight
+# Total clothing shop floor area, 1998: 2,977,703 m2
+# Total bookstore floor area, 1998: 325,108 m2
+# Ratio: 325108 / 2977703 = 0.109 -> distribution weight of 11
 
 Obj=factory
 name=Bookshop1750
@@ -223,7 +231,7 @@ class_proportion_jobs[3]=25
 class_proportion_jobs[4]=0
 climates=rocky,tundra,temperate,mediterran,desert,arctic,tropic
 Location=city
-distributionweight=6
+distributionweight=11
 Productivity=10  
 Range=12  
 passenger_boost=750
