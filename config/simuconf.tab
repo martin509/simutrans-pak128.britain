@@ -762,6 +762,8 @@ auto_connect_industries_and_attractions_by_road = 4
 
 ################################## Finance settings #################################
 
+# Note: starting money is inflation-adjusted in-game using config/prices.tab,
+# so the amounts below are based to year-1900 prices (1900 = 100% in prices.tab).
 # Starting money of the player. Given in Credit cents (1/100 Cr)
 # This varies by year: more starting money is available in later years.
 starting_money[0]=1750,25000000,1
