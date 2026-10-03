@@ -15,6 +15,33 @@ names.
 - The `simutranslator` target in `New/Makefile` packages `.dat` and `.png` files into zips for
   upload to simutranslator. `[CODE New master @ e36ec2321]`
 
+## Object name entries in `en.tab` (required for every new object)
+
+- Every new object needs an entry in `New/text/en.tab`. The file is plain ASCII text composed of
+  two-line pairs: the object's internal `name=` value (from its `.dat`) on one line, then the
+  English display name on the next. The display name is what the player sees; the key is the
+  machine name, never localised. `[EXECUTION-VERIFIED:2026-09-23]`
+- The file is divided by `#___…___` comment headers into sections; vehicle object names live in
+  the per-waytype sections (`air-vehicle`, `NarrowGaugeVehicle`, `rail-vehicle`,
+  `tram-vehicle`, `road-vehicle`, `water-vehicle`, `maglev-vehicle`) and are grouped by
+  manufacturer/operator. Insert a new entry beside its peers, not at the end of file.
+  `[EXECUTION-VERIFIED:2026-09-23]`
+- The `Livery schemes` section holds operator-level scheme display names (for example
+  `Wartime-Austerity` → `Austerity`); per-`liverytype` keys (for example `GER-Ultramarine`,
+  `LNER-Standard`, `Douglas-Demonstrator`) are absent throughout, including for long-shipped
+  liveries, so new liveries need no `en.tab` livery entry — follow the precedent. How the game
+  displays an unlisted livery name is unverified (raw key fallback presumed).
+  `[CODE New ex-15 @ 8b04b2114]`
+- Forgetting the `en.tab` entry leaves the raw machine name (e.g. `ger-s69`,
+  `douglas-dc-8-10`) shown in game. Checking this is part of every asset-adding task.
+  `[EXECUTION-VERIFIED:2026-09-23]`
+- Editing `New/text/en.tab` (or `config/`, `sound/`) does NOT reach the game by itself: the
+  build's `copy` target (`New/Makefile`, `cp -p text/*.* $(PAKDIR)/text`) copies these into
+  the pakset directory only when `make` runs. After editing any `text/`, `config/`, or
+  `sound/` file, re-run `make` before deploying/testing, otherwise the built pakset and the
+  in-game UI carry the stale copy. This was the cause of the S69/DC-8 names not appearing.
+  `[EXECUTION-VERIFIED:2026-09-24]`
+
 ## Planned sections
 
 - How object names and texts are translated and uploaded.
