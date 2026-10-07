@@ -3,6 +3,12 @@
 # https://publications.gc.ca/collections/Collection-R/Statcan/63-210-XIB/0009863-210-XIB.pdf
 # https://publications.gc.ca/collections/collection_2018/statcan/63-210/CS63-210-1978.pdf
 # StatsCan reports for 1978 and 1998 giving floor areas for supermarkets ('combination grocery stores' in 1978)
+#
+# https://assets.publishing.service.gov.uk/media/5a7f0f7740f0b62305b84d2e/Domestic_Food_Consumption_and_Expenditure_1970_and_1971.pdf
+# UK gov. report for total food consumption, 1970 (use as reference for Supermarket1960 consumption)
+# https://webarchive.nationalarchives.gov.uk/ukgwa/20130103031008mp_/http://www.defra.gov.uk/statistics/files/defra-stats-food-family-annual-2002.pdf
+# UK gov. report for total food consumption, 2002 (use as reference for Supermarket1980 consumption)
+#
 # of note: since Supermarket1960 is present in modern day, calculations take this into account
 # Comparing Canadian figures for supermarket floor area in 1998 and 1978 to clothing store floor area for the same returns:
 # Supermarket1960 = 14 (for ClothingStore1960 = 40)
