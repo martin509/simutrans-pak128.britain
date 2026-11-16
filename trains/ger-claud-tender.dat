@@ -25,6 +25,7 @@ years_before_maintenance_max_reached=25
 Constraint[Prev][0]=GER-Claud-Hamilton
 Constraint[Prev][1]=ger-belpaire-claud
 Constraint[Prev][2]=ger-super-claud
+Constraint[Prev][3]=ger-s69
 
 liverytype[0]=GER-Ultramarine
 liverytype[1]=WW1-Austerity

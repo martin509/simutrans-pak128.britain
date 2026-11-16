@@ -545,6 +545,8 @@ douglas-dc7c
 Douglas DC-7C "Seven Seas"
 douglas-dc7c-high-density
 Douglas DC-7C "Seven Seas" (high density)
+douglas-dc-8-10
+Douglas DC-8-10
 dhc3-otter
 DHC 3 Otter (mail)
 twin-otter-300
@@ -5618,6 +5620,8 @@ ger-belpaire-claud
 GER D56 Class "Belpaire Claud" 4-4-0
 ger-super-claud
 GER H88 Class "Super Claud" 4-4-0
+ger-s69
+GER S69 Class "1500" 4-6-0
 gwr-1813
 GWR 1813 Class 0-6-0T
 gwr-1813-rebuilt
@@ -9911,6 +9915,18 @@ TimingPoint
 Timing point
 #_________________City cars_______________________
 #_________________City cars_______________________
+AudiA4B6(Silver)
+Audi A4
+AudiA4B6(Blue)
+Audi A4
+AudiA4B6(Black)
+Audi A4
+AudiA4B6(Red)
+Audi A4
+AudiA4B6(Grey)
+Audi A4
+AudiA4B6(White)
+Audi A4
 AustinMetro(Blue)
 Austin Metro
 AustinMetro(Red)
@@ -9941,6 +9957,16 @@ AustinSeven(Black)
 Austin Seven
 AustinSeven(Green)
 Austin Seven
+BMC1100(TrafalgarBlue)
+BMC 1100/1300
+BMC1100(TartanRed)
+BMC 1100/1300
+BMC1100(SnowberryWhite)
+BMC 1100/1300
+BMC1100(ConnaughtGreen)
+BMC 1100/1300
+BMC1100(ElPasoBeige)
+BMC 1100/1300
 BMCMini(Blue)
 Mini
 BMCMini(Navy)
@@ -9953,6 +9979,26 @@ BMCMini(Red)
 Mini
 BMCMini(White)
 Mini
+FordAnglia100E(Black)
+Ford Anglia
+FordAnglia100E(CorfeGrey)
+Ford Anglia
+FordAnglia100E(WellsFawn)
+Ford Anglia
+FordAnglia100E(SarumBlue)
+Ford Anglia
+FordAnglia100E(HerefordGreen)
+Ford Anglia
+FordAnglia105E(AmbassadorBlue)
+Ford Anglia
+FordAnglia105E(SavoyBlack)
+Ford Anglia
+FordAnglia105E(ImperialMaroon)
+Ford Anglia
+FordAnglia105E(ErmineWhite)
+Ford Anglia
+FordAnglia105E(SpruceGreen)
+Ford Anglia
 FordCortina(Blue)
 Ford Cortina
 FordCortina(Red)
@@ -9965,6 +10011,62 @@ FordCortina(White)
 Ford Cortina
 FordCortina(Olive)
 Ford Cortina
+FordFiestaMk1(Red)
+Ford Fiesta
+FordFiestaMk1(Blue)
+Ford Fiesta
+FordFiestaMk1(White)
+Ford Fiesta
+FordFiestaMk1(Black)
+Ford Fiesta
+FordFiestaMk2(Red)
+Ford Fiesta
+FordFiestaMk2(Blue)
+Ford Fiesta
+FordFiestaMk2(White)
+Ford Fiesta
+FordFiestaMk2(Black)
+Ford Fiesta
+FordFiestaMk3(Blue)
+Ford Fiesta
+FordFiestaMk3(Red)
+Ford Fiesta
+FordFiestaMk3(Silver)
+Ford Fiesta
+FordFiestaMk3(Black)
+Ford Fiesta
+FordFiestaMk4(Blue)
+Ford Fiesta
+FordFiestaMk4(Silver)
+Ford Fiesta
+FordFiestaMk4(Red)
+Ford Fiesta
+FordFiestaMk4(Black)
+Ford Fiesta
+FordFiestaMk5(Silver)
+Ford Fiesta
+FordFiestaMk5(Blue)
+Ford Fiesta
+FordFiestaMk5(Black)
+Ford Fiesta
+FordFiestaMk5(Grey)
+Ford Fiesta
+FordFiestaMk6(Black)
+Ford Fiesta
+FordFiestaMk6(Silver)
+Ford Fiesta
+FordFiestaMk6(Blue)
+Ford Fiesta
+FordFiestaMk6(Grey)
+Ford Fiesta
+FordFiestaMk7(Grey)
+Ford Fiesta
+FordFiestaMk7(Black)
+Ford Fiesta
+FordFiestaMk7(White)
+Ford Fiesta
+FordFiestaMk7(Blue)
+Ford Fiesta
 FordKa(Blue)
 Ford Ka
 FordKa(Silver)
@@ -10051,6 +10153,54 @@ ReliantRobin(Silver)
 Reliant Robin
 ReliantRobin(Yellow)
 Trotter's Independent Trading Co.: New York - Milan - Peckham
+VauxhallNova(Blue)
+Vauxhall Nova
+VauxhallNova(Red)
+Vauxhall Nova
+VauxhallNova(White)
+Vauxhall Nova
+VauxhallNova(Black)
+Vauxhall Nova
+VauxhallCorsaB(Blue)
+Vauxhall Corsa
+VauxhallCorsaB(Silver)
+Vauxhall Corsa
+VauxhallCorsaB(Red)
+Vauxhall Corsa
+VauxhallCorsaB(Green)
+Vauxhall Corsa
+VauxhallCorsaC(Silver)
+Vauxhall Corsa
+VauxhallCorsaC(Blue)
+Vauxhall Corsa
+VauxhallCorsaC(Black)
+Vauxhall Corsa
+VauxhallCorsaC(Red)
+Vauxhall Corsa
+VauxhallCorsaD(Black)
+Vauxhall Corsa
+VauxhallCorsaD(Silver)
+Vauxhall Corsa
+VauxhallCorsaD(Blue)
+Vauxhall Corsa
+VauxhallCorsaD(Grey)
+Vauxhall Corsa
+VauxhallCorsaE(White)
+Vauxhall Corsa
+VauxhallCorsaE(Black)
+Vauxhall Corsa
+VauxhallCorsaE(Grey)
+Vauxhall Corsa
+VauxhallCorsaE(Blue)
+Vauxhall Corsa
+VauxhallCorsaF(Grey)
+Vauxhall Corsa
+VauxhallCorsaF(Black)
+Vauxhall Corsa
+VauxhallCorsaF(White)
+Vauxhall Corsa
+VauxhallCorsaF(Blue)
+Vauxhall Corsa
 Volvo-V70-Police
 Volvo V70 police car
 LondonTaxi-Lanchester
@@ -10072,6 +10222,16 @@ Ford Escort
 FordEscort-mk1(Black)
 Ford Escort
 FordEscort-mk1(White)
+Ford Escort
+FordEscort-mk2(Blue)
+Ford Escort
+FordEscort-mk2(Red)
+Ford Escort
+FordEscort-mk2(White)
+Ford Escort
+FordEscort-mk2(Yellow)
+Ford Escort
+FordEscort-mk2(Bronze)
 Ford Escort
 FordEscort-mk4(Blue)
 Ford Escort
